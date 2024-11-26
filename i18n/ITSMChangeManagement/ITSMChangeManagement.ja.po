@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2019-04-09 12:23+0000\n"
-"PO-Revision-Date: 2023-08-25 11:42+0000\n"
+"PO-Revision-Date: 2024-11-26 03:34+0000\n"
 "Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
-"Language-Team: Japanese <https://translate.otobo.org/projects/otobo10/itsmchangemanagement/ja/>\n"
+"Language-Team: Japanese <http://weblate.otobo.org/projects/opm-packages/"
+"itsm-changemanagement/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #. Template: AdminITSMChangeCIPAllocate
 msgid "Category ↔ Impact ↔ Priority"
@@ -2899,27 +2900,30 @@ msgstr ""
 
 #. Template: AgentITSMChangeHistory
 msgid "History Content"
-msgstr "履歴内容"
+msgstr "コメント履歴"
 
 #. Template: AgentITSMChangeHistory
 msgid "Createtime"
-msgstr "作成日時"
+msgstr "作成時間"
 
 #. Template: AgentITSMChangeOverviewNavBar
 msgid "Context Settings"
-msgstr "コンテキストの設定"
+msgstr "コンテキスト設定"
 
 #. Template: AgentITSMChangeZoom
 msgid "Last changed by"
-msgstr "最終変更者"
+msgstr "最終更新者"
 
 #. Template: AgentITSMChangeZoom
 msgid "To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS)."
-msgstr "(一部のOSにおいては)下記のリンクをオープンするためにクリック時に、Ctrl あるいは Cmd または Shiftキーを押下する必要がる場合があります。"
+msgstr ""
+"次の説明ブロック内のリンクを開くには、リンクをクリックするときに Ctrl キー、"
+"Cmd キー、または Shift キーを押す必要がある場合があります (ブラウザと OS "
+"によって異なります)。"
 
 #. Template: AgentITSMChangeZoom
 msgid "Download Attachment"
-msgstr "添付ファイルのダウンロード"
+msgstr "添付ファイルをダウンロード"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
 msgid "No %s is given!"
@@ -3040,4 +3044,3 @@ msgstr ""
 #. SysConfig
 msgid "Defines the height for the rich text editor component for this screen. Enter number (pixels) or percent value (relative)."
 msgstr ""
-
