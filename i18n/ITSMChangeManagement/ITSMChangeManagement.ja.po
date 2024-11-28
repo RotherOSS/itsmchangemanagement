@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2019-04-09 12:23+0000\n"
-"PO-Revision-Date: 2024-11-26 03:34+0000\n"
+"PO-Revision-Date: 2024-11-28 07:34+0000\n"
 "Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
 "Language-Team: Japanese <http://weblate.otobo.org/projects/opm-packages/"
 "itsm-changemanagement/ja/>\n"
@@ -2927,11 +2927,11 @@ msgstr "添付ファイルをダウンロード"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
 msgid "No %s is given!"
-msgstr "%s   が不足しています。"
+msgstr "%s が指定されていません！"
 
 #. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
 msgid "No config option found for the view \"%s\"!"
-msgstr ""
+msgstr "ビュー \"%s\" の設定オプションが見つかりません！"
 
 #. JS File: ITSM.Agent.ChangeManagement.ConfirmDialog
 msgid "Ok"
