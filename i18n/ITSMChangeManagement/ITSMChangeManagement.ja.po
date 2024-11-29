@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2019-04-09 12:23+0000\n"
-"PO-Revision-Date: 2024-11-29 05:34+0000\n"
+"PO-Revision-Date: 2024-11-29 07:34+0000\n"
 "Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
 "Language-Team: Japanese <http://weblate.otobo.org/projects/opm-packages/"
 "itsm-changemanagement/ja/>\n"
@@ -3036,16 +3036,19 @@ msgstr ""
 
 #. SysConfig
 msgid "Defines the initial height for the rich text editor component in pixels."
-msgstr ""
+msgstr "リッチ テキスト エディター "
+"コンポーネントの初期の高さをピクセル単位で定義します。"
 
 #. SysConfig
 msgid "Defines if parent-child translations for queues and services should be generated automatically."
-msgstr ""
+msgstr "キューとサービスの親子変換を自動的に生成するかどうかを定義します。"
 
 #. SysConfig
 msgid "Defines the initial height in pixels for the rich text editor component for this screen."
-msgstr ""
+msgstr "この画面のリッチ テキスト エディター "
+"コンポーネントの初期の高さをピクセル単位で定義します。"
 
 #. SysConfig
 msgid "Defines the height for the rich text editor component for this screen. Enter number (pixels) or percent value (relative)."
-msgstr ""
+msgstr "この画面のリッチ テキスト エディター コンポーネントの高さを定義します。数値 "
+"(ピクセル) またはパーセント値 (相対) を入力します。"
