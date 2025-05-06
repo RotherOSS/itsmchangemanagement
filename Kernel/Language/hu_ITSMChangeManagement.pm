@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -313,7 +313,6 @@ sub Data {
     $Self->{Translation}->{'Can\'t show history, as no ChangeID is given!'} = 'Nem lehet megjeleníteni az előzményeket, mivel nincs változásazonosító megadva!';
     $Self->{Translation}->{'Change "%s" not found in the database!'} = 'A(z) „%s” változás nem található az adatbázisban!';
     $Self->{Translation}->{'Unknown type "%s" encountered!'} = 'Ismeretlen típus fordult elő: %s!';
-    $Self->{Translation}->{'Change History'} = 'Változástörténet';
 
     # Perl Module: Kernel/Modules/AgentITSMChangeHistoryZoom.pm
     $Self->{Translation}->{'Can\'t show history zoom, no HistoryEntryID is given!'} = 'Nem lehet megjeleníteni az előzménynagyítást, nincs előzménybejegyzés-azonosító megadva!';
@@ -534,7 +533,7 @@ sub Data {
     $Self->{Translation}->{'Group ITSMChangeBuilder'} = 'ITSM változás-összeállító csoport';
     $Self->{Translation}->{'Group ITSMChangeManager'} = 'ITSM változásmenedzser csoport';
 
-    # Database XML Definition: ITSMChangeManagement.sopm
+    # Database XML / SOPM Definition: ITSMChangeManagement.sopm
     $Self->{Translation}->{'requested'} = 'kérve';
     $Self->{Translation}->{'pending approval'} = 'jóváhagyásra vár';
     $Self->{Translation}->{'rejected'} = 'visszautasítva';
