@@ -349,7 +349,7 @@ sub Run {
                 }
 
                 # get redirect screen
-                my $NextScreen = $Self->{UserCreateWorkOrderNextMask} || 'AgentITSMWorkOrderZoom';
+                my $NextScreen = $Self->{Session}{UserCreateWorkOrderNextMask} || 'AgentITSMWorkOrderZoom';
 
                 # add the correct id
                 if ( $NextScreen eq 'AgentITSMWorkOrderZoom' ) {
