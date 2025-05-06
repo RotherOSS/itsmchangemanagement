@@ -118,7 +118,7 @@ sub Run {
 
                 # load new URL in parent window and close popup
                 return $LayoutObject->PopupClose(
-                    URL => $Self->{LastWorkOrderView},
+                    URL => $Self->{Session}{LastWorkOrderView},
                 );
 
             }
