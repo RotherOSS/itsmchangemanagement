@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
 # --
 # $origin:  - 82d27dbf8015e9d7e4da3d0a4628369d84cc441d - Kernel/Modules/AgentITSMChangeAddFromTemplate.pm
 # --
@@ -246,27 +246,21 @@ sub Run {
             # if the change add mask was called from the ticket zoom
             if ( $GetParam{TicketID} ) {
 
-                my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
-                my $BackendObject      = $Kernel::OM->Get('Kernel::System::DynamicField::Backend');
-                my $TemplateObject     = $Kernel::OM->Get('Kernel::System::ITSMChange::Template');
-                my $TicketObject       = $Kernel::OM->Get('Kernel::System::Ticket');
-
-                my %Ticket = $TicketObject->TicketGet(
-                    TicketID      => $GetParam{TicketID},
-                    DynamicFields => 1,
-                    UserID        => $Self->{UserID},
-                );
-
-                my $TemplateData = $TemplateObject->TemplateGet(
-                    TemplateID => $ParamObject->GetParam( Param => 'TemplateID' ),
-                    UserID      => $Self->{UserID},
-                );
-
-                # Copy Ticket title and body to Change Title
+                # Copy Ticket title and body to Change Title 
                 if ( $Self->{Config}->{CopyTicketTitleandBodyToChange} == 1 ) {
 
                     my $ChangeObject       = $Kernel::OM->Get('Kernel::System::ITSMChange');
+                    my $TemplateObject     = $Kernel::OM->Get('Kernel::System::ITSMChange::Template');
+                    my $TicketObject       = $Kernel::OM->Get('Kernel::System::Ticket');
                     my $ArticleObject      = $Kernel::OM->Get('Kernel::System::Ticket::Article');
+                    my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
+                    my $BackendObject      = $Kernel::OM->Get('Kernel::System::DynamicField::Backend');
+
+                    my %Ticket = $TicketObject->TicketGet(
+                        TicketID      => $GetParam{TicketID},
+                        DynamicFields => 1,
+                        UserID        => $Self->{UserID},
+                    );
 
                     # get first article
                     my @Articles = $ArticleObject->ArticleList(
@@ -283,7 +277,10 @@ sub Run {
                         DynamicFields => 0,
                     );
 
-
+                    my $TemplateData = $TemplateObject->TemplateGet(
+                        TemplateID => $ParamObject->GetParam( Param => 'TemplateID' ),
+                        UserID      => $Self->{UserID},
+                    );
 
                     if ( $TemplateData->{Name} && $Ticket{Title} || $Article{Subject} ) {
 
@@ -303,7 +300,7 @@ sub Run {
                         );
                     }
                }
-
+              
                # Copy used template name to dynamic field, defined at ITSMChange::Frontend::AgentITSMChangeAddFromTemplate###TemplateField
                if ( $Self->{Config}->{TemplateField} ) {
 
