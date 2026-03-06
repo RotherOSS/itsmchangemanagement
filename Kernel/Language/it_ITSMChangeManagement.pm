@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2026 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -84,9 +84,6 @@ sub Data {
     $Self->{Translation}->{'Matching'} = 'Accoppiamento';
     $Self->{Translation}->{'Any expression (OR)'} = 'Qualsiasi espressione (OR)';
     $Self->{Translation}->{'All expressions (AND)'} = 'Tutte le espressioni (AND)';
-    $Self->{Translation}->{'All expressions depending (AND)'} = '';
-    $Self->{Translation}->{'BypassStateMachine'} = '';
-    $Self->{Translation}->{'BypassStateMachineWO'} = '';
     $Self->{Translation}->{'Expressions'} = 'Espressioni';
     $Self->{Translation}->{'Selector'} = 'Selettore';
     $Self->{Translation}->{'Operator'} = 'Operatore';

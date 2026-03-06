@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2026 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -84,9 +84,6 @@ sub Data {
     $Self->{Translation}->{'Matching'} = '一致';
     $Self->{Translation}->{'Any expression (OR)'} = 'いずれかの条件に該当する(OR)';
     $Self->{Translation}->{'All expressions (AND)'} = 'すべての条件が該当する(AND)';
-    $Self->{Translation}->{'All expressions depending (AND)'} = '';
-    $Self->{Translation}->{'BypassStateMachine'} = '';
-    $Self->{Translation}->{'BypassStateMachineWO'} = '';
     $Self->{Translation}->{'Expressions'} = '条件';
     $Self->{Translation}->{'Selector'} = '選択';
     $Self->{Translation}->{'Operator'} = '操作';
@@ -105,9 +102,9 @@ sub Data {
 
     # Template: AgentITSMChangeHistory
     $Self->{Translation}->{'History of %s%s'} = '%s%sの履歴';
-    $Self->{Translation}->{'History Content'} = '履歴内容';
+    $Self->{Translation}->{'History Content'} = 'コメント履歴';
     $Self->{Translation}->{'Workorder'} = '作業依頼書';
-    $Self->{Translation}->{'Createtime'} = '作成日時';
+    $Self->{Translation}->{'Createtime'} = '作成時間';
     $Self->{Translation}->{'Show details'} = '詳細を表示';
     $Self->{Translation}->{'Show workorder'} = '作業依頼書を表示';
 
@@ -133,7 +130,7 @@ sub Data {
     $Self->{Translation}->{'Current CAB'} = '現在の変更諮問委員会';
 
     # Template: AgentITSMChangeOverviewNavBar
-    $Self->{Translation}->{'Context Settings'} = 'コンテキストの設定';
+    $Self->{Translation}->{'Context Settings'} = 'コンテキスト設定';
     $Self->{Translation}->{'Changes per page'} = '';
 
     # Template: AgentITSMChangeOverviewSmall
@@ -186,10 +183,10 @@ sub Data {
     $Self->{Translation}->{'Change Initiator(s)'} = 'イニシエータを変更';
     $Self->{Translation}->{'CAB'} = '変更諮問委員会';
     $Self->{Translation}->{'Last changed'} = '最終更新日時';
-    $Self->{Translation}->{'Last changed by'} = '最終変更者';
+    $Self->{Translation}->{'Last changed by'} = '最終更新者';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
-        '(一部のOSにおいては)下記のリンクをオープンするためにクリック時に、Ctrl あるいは Cmd または Shiftキーを押下する必要がる場合があります。';
-    $Self->{Translation}->{'Download Attachment'} = '添付ファイルのダウンロード';
+        '次の説明ブロック内のリンクを開くには、リンクをクリックするときに Ctrl キー、Cmd キー、または Shift キーを押す必要がある場合があります (ブラウザと OS によって異なります)。';
+    $Self->{Translation}->{'Download Attachment'} = '添付ファイルをダウンロード';
 
     # Template: AgentITSMTemplateEditCAB
     $Self->{Translation}->{'Edit CAB Template'} = '変更諮問委員会のテンプレートを編集';
@@ -292,7 +289,7 @@ sub Data {
     $Self->{Translation}->{'Could not delete ConditionID %s!'} = 'コンディションID %s を削除できませんでした！';
 
     # Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
-    $Self->{Translation}->{'No %s is given!'} = '%s   が不足しています。';
+    $Self->{Translation}->{'No %s is given!'} = '%s が指定されていません！';
     $Self->{Translation}->{'Could not create new condition!'} = '新しいコンディションを作成できませんでした！';
     $Self->{Translation}->{'Could not update ConditionID %s!'} = 'コンディションID %s を更新できませんでした！';
     $Self->{Translation}->{'Could not update ExpressionID %s!'} = '';
@@ -463,7 +460,7 @@ sub Data {
     # Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
     $Self->{Translation}->{'Need config option %s!'} = '';
     $Self->{Translation}->{'Config option %s needs to be a HASH ref!'} = '';
-    $Self->{Translation}->{'No config option found for the view "%s"!'} = '';
+    $Self->{Translation}->{'No config option found for the view "%s"!'} = 'ビュー "%s" の設定オプションが見つかりません！';
     $Self->{Translation}->{'Title: %s | Type: %s'} = '';
 
     # Perl Module: Kernel/Output/HTML/ToolBar/MyCAB.pm
@@ -648,7 +645,7 @@ sub Data {
     $Self->{Translation}->{'Default type for a workorder. This entry must exist in general catalog class \'ITSM::ChangeManagement::WorkOrder::Type\'.'} =
         '';
     $Self->{Translation}->{'Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = "complex"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js.'} =
-        'リンクオブジェクトウィジェット（LinkObject :: ViewMode = "complex"）で設定ボタンを使用できるアクションを定義します。 これらのアクションは、次のJSおよびCSSファイルを登録している必要があります。Core.AllocationList.css、Core.UI.AllocationList.js、Core.UI.Table.Sort.js、Core.Agent.TableFilters.js、及びCore.Agent .LinkObject.js';
+        'リンクされたオブジェクト ウィジェット (LinkObject::ViewMode = "complex") で設定ボタンが使用できるアクションを定義します。これらのアクションには、Core.AllocationList.css、Core.UI.AllocationList.js、Core.UI.Table.Sort.js、Core.Agent.TableFilters.js、および Core.Agent.LinkObject.js の JS および CSS ファイルが登録されている必要があることに注意してください。';
     $Self->{Translation}->{'Define the signals for each workorder state.'} = '';
     $Self->{Translation}->{'Define which columns are shown in the linked Changes widget (LinkObject::ViewMode = "complex"). Note: Only Change attributes are allowed for DefaultColumns. Possible settings: 0 = Disabled, 1 = Available, 2 = Enabled by default.'} =
         '';
@@ -738,7 +735,7 @@ sub Data {
     $Self->{Translation}->{'Defines the field type of CompareValue fields for workorder attributes used in the change condition edit screen of the agent interface. Valid values are Selection, Text and Date. If a type is not defined, the field will not be shown.'} =
         '';
     $Self->{Translation}->{'Defines the height for the rich text editor component for this screen. Enter number (pixels) or percent value (relative).'} =
-        '';
+        'この画面のリッチ テキスト エディター コンポーネントの高さを定義します。数値 (ピクセル) またはパーセント値 (相対) を入力します。';
     $Self->{Translation}->{'Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.'} =
         '';
     $Self->{Translation}->{'Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.'} =
