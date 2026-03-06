@@ -1,28 +1,14 @@
-#
-# Translators:
-# Dominik <dominik@reichardt-online.it>, 2015
-# Ettore Atalan <atalanttore@googlemail.com>, 2014-2016
-# mathiasbraeunling <mathias.braeunling@otobo.com>, 2015
-# Michael Reuther <michael.reuther@otobo.com>, 2019
-# ru_otobo <robert.ullrich@otobo.com>, 2014
-# Rudy R <rudy.rohde@googlemail.com>, 2015
-# Sascha Lewandowski <S.Lewandowski@it-lew.de>, 2015
-# Stefan Simmerstatter, 2015
-# Udo Bretz, 2014
-# Udo Bretz, 2014,2016-2018
 msgid ""
 msgstr ""
-"Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2019-04-09 12:23+0000\n"
-"PO-Revision-Date: 2022-11-10 11:28+0000\n"
-"Last-Translator: Stefan Abel <sta@rother-oss.com>\n"
-"Language-Team: German <https://translate.otobo.org/projects/otobo10/itsmchangemanagement/de/>\n"
-"Language: de\n"
+"Project-Id-Version: ITSMChangeManagement\n"
+"POT-Creation-Date: 2024-05-25 04:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
 
 #. Template: AdminITSMChangeCIPAllocate
 msgid "Category ↔ Impact ↔ Priority"
@@ -253,8 +239,16 @@ msgid "History of %s%s"
 msgstr "Historie von %s%s"
 
 #. Template: AgentITSMChangeHistory
+msgid "History Content"
+msgstr "Änderungsverlauf"
+
+#. Template: AgentITSMChangeHistory
 msgid "Workorder"
 msgstr "Arbeitsauftrag"
+
+#. Template: AgentITSMChangeHistory
+msgid "Createtime"
+msgstr "Erstellt am"
 
 #. Template: AgentITSMChangeHistory
 msgid "Show details"
@@ -331,6 +325,10 @@ msgstr "Ungültiger Benutzer"
 #. Template: AgentITSMChangeInvolvedPersons
 msgid "Current CAB"
 msgstr "Aktuelles CAB"
+
+#. Template: AgentITSMChangeOverviewNavBar
+msgid "Context Settings"
+msgstr "Kontext-Einstellungen"
 
 #. Template: AgentITSMChangeOverviewNavBar
 msgid "Changes per page"
@@ -491,6 +489,18 @@ msgstr "CAB"
 #. Template: AgentITSMChangeZoom
 msgid "Last changed"
 msgstr "Zuletzt geändert"
+
+#. Template: AgentITSMChangeZoom
+msgid "Last changed by"
+msgstr "Zuletzt geändert von"
+
+#. Template: AgentITSMChangeZoom
+msgid "To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS)."
+msgstr "Um die Links im folgenden Beitrag zu öffnen, kann es notwendig sein Strg oder Shift zu drücken, während auf den Link geklickt wird (abhängig vom verwendeten Browser und Betriebssystem)."
+
+#. Template: AgentITSMChangeZoom
+msgid "Download Attachment"
+msgstr "Anhang herunterladen"
 
 #. Template: AgentITSMTemplateEditCAB
 msgid "Edit CAB Template"
@@ -697,6 +707,10 @@ msgid "Could not delete ConditionID %s!"
 msgstr "Konnte Bedingungs-ID %s nicht löschen!"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
+msgid "No %s is given!"
+msgstr "Kein(e) %s übermittelt!"
+
+#. Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
 msgid "Could not create new condition!"
 msgstr "Konnte keine neue Bedingung erstellen!"
 
@@ -759,10 +773,6 @@ msgstr "Change \"%s\" in der Datenbank nicht gefunden!"
 #. Perl Module: Kernel/Modules/AgentITSMChangeHistory.pm
 msgid "Unknown type \"%s\" encountered!"
 msgstr "Unbekannter Typ \"%s\" gefunden!"
-
-#. Perl Module: Kernel/Modules/AgentITSMChangeHistory.pm
-msgid "Change History"
-msgstr "Inbetriebnahme-Historie"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeHistoryZoom.pm
 msgid "Can't show history zoom, no HistoryEntryID is given!"
@@ -1112,18 +1122,6 @@ msgstr "Konnte Arbeitsauftrag %s nicht nehmen!"
 msgid "The workorder \"%s\" could not be serialized."
 msgstr "Der Arbeitsauftrag \"%s\" konnte nicht serialisiert werden."
 
-#. Perl Module: Kernel/Output/HTML/DocumentSearch/ITSMChange.pm
-msgid "ITSM Change Attachment"
-msgstr "ITSM Change-Anhang"
-
-#. Perl Module: Kernel/Output/HTML/DocumentSearch/ITSMWorkOrder.pm
-msgid "ITSM Work Order"
-msgstr "ITSM Arbeitsauftrag"
-
-#. Perl Module: Kernel/Output/HTML/DocumentSearch/ITSMWorkOrder.pm
-msgid "ITSM Work Order Attachment"
-msgstr "ITSM Arbeitsauftrags-Anhang"
-
 #. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
 msgid "Need config option %s!"
 msgstr "Benötige Systemkonfigurations-Option %s!"
@@ -1131,6 +1129,10 @@ msgstr "Benötige Systemkonfigurations-Option %s!"
 #. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
 msgid "Config option %s needs to be a HASH ref!"
 msgstr "Systemkonfigurations-Option %s muss eine Hash-Referenz sein!"
+
+#. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
+msgid "No config option found for the view \"%s\"!"
+msgstr "Keine Konfigurationsoption für die Ansicht \"%s\" gefunden!"
 
 #. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
 msgid "Title: %s | Type: %s"
@@ -1147,14 +1149,6 @@ msgstr "Meine Changes"
 #. Perl Module: Kernel/Output/HTML/ToolBar/MyWorkOrders.pm
 msgid "My Work Orders"
 msgstr "Meine Arbeitsaufträge"
-
-#. SysConfig
-msgid "ITSM Changes"
-msgstr "ITSM Changes"
-
-#. Perl Module: Kernel/System/DocumentSearch/Driver/ITSMWorkOrder.pm
-msgid "ITSM Work Orders"
-msgstr "ITSM Arbeitsaufträge"
 
 #. Perl Module: Kernel/System/ITSMChange/History.pm
 msgid "%s: %s"
@@ -1548,6 +1542,10 @@ msgstr "Wollen Sie diese Aktion wirklich löschen?"
 msgid "Do you really want to delete this condition?"
 msgstr "Wollen Sie diese Bedingung wirklich löschen?"
 
+#. JS File: ITSM.Agent.ChangeManagement.ConfirmDialog
+msgid "Ok"
+msgstr "Ok"
+
 #. SysConfig
 msgid "A list of the agents who have permission to take workorders. Key is a login name. Content is 0 or 1."
 msgstr "Eine Liste der Agenten, die Berechtigungen haben, Arbeitsaufträge zu übernehmen haben. \"Schlüssel\" ist der Anmeldename. \"Inhalt\" ist 0 oder 1."
@@ -1657,6 +1655,10 @@ msgid "Change Schedule"
 msgstr "Change-Zeitplan"
 
 #. SysConfig
+msgid "Change Schedule."
+msgstr "Change-Planung."
+
+#. SysConfig
 msgid "Change Settings"
 msgstr "Change-Einstellungen"
 
@@ -1691,6 +1693,10 @@ msgstr "Anzeigelimit pro Seite für die Change-Übersicht \"Klein\"."
 #. SysConfig
 msgid "Change number"
 msgstr "Change-Nummer"
+
+#. SysConfig
+msgid "Change search backend router of the agent interface."
+msgstr "Such-Backend-Router für die Change-Suche in der Agenten-Ansicht."
 
 #. SysConfig
 msgid "Change state"
@@ -1749,6 +1755,10 @@ msgid "Default type for a workorder. This entry must exist in general catalog cl
 msgstr "Standardtyp für einen Arbeitsauftrag. Dieser Eintrag muss in der General Katalog-Klasse 'ITSM::ChangeManagement::WorkOrder::Type' existieren."
 
 #. SysConfig
+msgid "Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = \"complex\"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js."
+msgstr "Definieren Sie Actions, in denen im Verknüpfte-Objekte-Widget ein Einstellungen-Knopf verfügbar sein soll (LinkObject::ViewMode = \"complex\"). Bitte beachten Sie, dass für diese Actions die folgenden JS- und CSS-Dateien registriert sein müssen: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js und Core.Agent.LinkObject.js."
+
+#. SysConfig
 msgid "Define the signals for each workorder state."
 msgstr "Definieren eines Signals für einen Arbeitsauftragsstatus."
 
@@ -1805,16 +1815,16 @@ msgid "Defines if the planned effort should be shown."
 msgstr "Definiert, ob \"geplanter Aufwand\" angezeigt werden soll."
 
 #. SysConfig
-msgid "Defines if the requested date could be printed by customer."
-msgstr "Definiert, ob der Wunschtermin vom Kunden gedruckt werden kann."
+msgid "Defines if the requested date should be print by customer."
+msgstr "Definiert ob das Anfragedatum für den Kunden gedruckt werden soll."
 
 #. SysConfig
-msgid "Defines if the requested date could be searched by customer."
-msgstr "Definiert, ob der Wunschtermin vom Kunden gesucht werden kann."
+msgid "Defines if the requested date should be searched by customer."
+msgstr "Soll der Wunschtermin des Kunden gesucht werden können."
 
 #. SysConfig
-msgid "Defines if the requested date could be set by customer."
-msgstr "Definiert, ob der Wunschtermin vom Kunden gesetzt werden kann."
+msgid "Defines if the requested date should be set by customer."
+msgstr "Definiert ob das Anfragedatum vom Kunden ausgefüllt werden soll."
 
 #. SysConfig
 msgid "Defines if the requested date should be shown by customer."
@@ -1831,6 +1841,10 @@ msgstr "Definiert, ob der Arbeitsauftrags-Titel angezeigt werden soll."
 #. SysConfig
 msgid "Defines shown graph attributes."
 msgstr "Definiert Attribute für die Anzeige des Graphen."
+
+#. SysConfig
+msgid "Defines that only changes containing Workorders linked with services, which the customer user has permission to use will be shown. Any other changes will not be displayed."
+msgstr "Definiert, dass nur Änderungen angezeigt werden, die Arbeitsaufträge enthalten, die mit Diensten verlinkt sind, für die der Kunden-Benutzer eine Berechtigung hat. Andere Änderungen werden nicht angezeigt."
 
 #. SysConfig
 msgid "Defines the change states that will be allowed to delete."
@@ -1859,6 +1873,10 @@ msgstr "Definiert die Change-Status die als Filter in der Change-Manager-Übersi
 #. SysConfig
 msgid "Defines the change states that will be used as filters in the change overview."
 msgstr "Definiert die Change-Status die als Filter in der Change-Übersicht verwendet werden."
+
+#. SysConfig
+msgid "Defines the change states that will be used as filters in the customer change schedule overview."
+msgstr "Definiert die Change-States die als Filter in der Kunden-Ansicht \"Change Schedule\" verwendet werden."
 
 #. SysConfig
 msgid "Defines the default change title for a dummy change which is needed to edit a workorder template."
@@ -1897,6 +1915,10 @@ msgid "Defines the default sort criteria of the changes in the PIR overview."
 msgstr "Definiert die Standard-Sortierkriterien der Changes in der \"PIR\"-Übersicht."
 
 #. SysConfig
+msgid "Defines the default sort criteria of the changes in the customer change schedule overview."
+msgstr "Standard Sortierung der Changes in der Kunden-Ansicht \"Change Schedule\"."
+
+#. SysConfig
 msgid "Defines the default sort criteria of the changes in the template overview."
 msgstr "Definiert die Standard-Sortierkriterien der Vorlagen in der Vorlagenübersicht."
 
@@ -1931,6 +1953,10 @@ msgstr "Definiert die Standard-Reihenfolge der Sortierung in der Change-Übersic
 #. SysConfig
 msgid "Defines the default sort order in the change schedule overview."
 msgstr "Definiert die Standard-Reihenfolge der Sortierung der Changes in der Change-Zeitplan-Übersicht."
+
+#. SysConfig
+msgid "Defines the default sort order in the customer change schedule overview."
+msgstr "Standard Reihenfolge der Changes in der Kunden-Ansicht \"Change Schedule\"."
 
 #. SysConfig
 msgid "Defines the default sort order in the template overview."
@@ -2083,6 +2109,10 @@ msgstr "Definiert die angezeigten Tabellenspalten in der Change-Übersicht. Dies
 #. SysConfig
 msgid "Defines the shown columns in the change search. This option has no effect on the position of the column."
 msgstr "Definiert die angezeigten Tabellenspalten im Suchergebnis. Diese Option hat keinen Effekt auf die Position der Spalten."
+
+#. SysConfig
+msgid "Defines the shown columns in the customer change schedule overview. This option has no effect on the position of the column."
+msgstr "Definiert die angezeigten Tabellenspalten in der Kunden-Ansicht \"Change Schedule\". Diese Option hat keinen Effekt auf die Position der Spalten."
 
 #. SysConfig
 msgid "Defines the shown columns in the template overview. This option has no effect on the position of the column."
@@ -2249,6 +2279,10 @@ msgid "ITSM Change notification rules"
 msgstr "ITSM Change Benachrichtigungs-Regeln"
 
 #. SysConfig
+msgid "ITSM Changes"
+msgstr "ITSM Changes"
+
+#. SysConfig
 msgid "ITSM MyCAB Overview."
 msgstr "ITSM Meine CABs-Übersicht."
 
@@ -2301,14 +2335,6 @@ msgid "ITSM event module that sends notifications."
 msgstr "ITSM Ereignismodul zum Senden von Benachrichtigungen."
 
 #. SysConfig
-msgid "ITSM event module that updates the ITSMChange index."
-msgstr "ITSM-Ereignismodul, das den ITSMChange-Index aktualisiert."
-
-#. SysConfig
-msgid "ITSM event module that updates the ITSMWorkOrder index."
-msgstr "ITSM-Ereignismodul, dass den ITSM Arbeitsauftrags-Index aktualisiert."
-
-#. SysConfig
 msgid "ITSM event module that updates the history of changes."
 msgstr "ITSM-Ereignismodul, das die Historie von Changes aktualisiert."
 
@@ -2339,14 +2365,6 @@ msgstr "ITSM Arbeitsauftrag"
 #. SysConfig
 msgid "If frequency is 'regularly', you can configure how often the notifications are sent (every X hours)."
 msgstr "Wenn die Häufigkeit auf 'reglmäßig' eingestellt ist, können Sie hier einstellen, wie oft die Benachrichtigung versendet werden (Aller X-Stunden)."
-
-#. SysConfig
-msgid "It controls availability for ITSMChange search driver."
-msgstr "Es steuert die Verfügbarkeit des ITSM Change-Suchtreibers."
-
-#. SysConfig
-msgid "It controls availability for ITSMWorkOrder search driver."
-msgstr "Es steuert die Verfügbarkeit des ITSM Arbeitsauftrag-Suchtreibers."
 
 #. SysConfig
 msgid "Link another object to the change."
@@ -2665,6 +2683,10 @@ msgid "Save workorder as a template."
 msgstr "Arbeitsauftrag als Vorlage speichern."
 
 #. SysConfig
+msgid "Schedule"
+msgstr "Zeitplan"
+
+#. SysConfig
 msgid "Screen after creating a workorder"
 msgstr "Ansicht nach Arbeitsauftragserstellung"
 
@@ -2737,20 +2759,20 @@ msgid "Shows a link in the menu that allows moving the time slot of a change in 
 msgstr "Zeigt in der Change-Detailansicht des Agenten-Interface einen Menü-Link zum Ändern des Zeitfensters."
 
 #. SysConfig
-msgid "Shows a link in the menu that allows taking a workorder in the zoom view of the agent interface."
-msgstr "Zeigt im Menü der Arbeitsauftrag-Detailansicht im Agenten-Interface einen Link, dass den Agenten erlaubt, einen Arbeitsauftrag zu übernehmen."
+msgid "Shows a link in the menu that allows taking a workorder in the its zoom view of the agent interface."
+msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in die ITSM-Detailansicht in der Agentenoberfläche übernommen werden kann."
 
 #. SysConfig
-msgid "Shows a link in the menu to access the conditions of a change in the zoom view of the agent interface."
-msgstr "Zeigt in der Change-Detailansicht des Agenten-Interface einen Menü-Link zum Zugriff auf die Bedingungen."
+msgid "Shows a link in the menu to access the conditions of a change in the its zoom view of the agent interface."
+msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Zugriff auf die Bedingungen."
 
 #. SysConfig
-msgid "Shows a link in the menu to access the history of a change in the zoom view of the agent interface."
-msgstr "Zeigt in der Change-Detailansicht des Agenten-Interface einen Menü-Link zum Zugriff auf die Historie."
+msgid "Shows a link in the menu to access the history of a change in the its zoom view of the agent interface."
+msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Zugriff auf die Historie."
 
 #. SysConfig
-msgid "Shows a link in the menu to access the history of a workorder in the zoom view of the agent interface."
-msgstr "Zeigt in der Arbeitsauftrag-Detailansicht des Agenten-Interface einen Menü-Link zum Zugriff auf die Historie."
+msgid "Shows a link in the menu to access the history of a workorder in the its zoom view of the agent interface."
+msgstr "Zeigt einen Link im Menü an, über den die Historie eines Arbeitsauftrags in der ITSM-Detailansicht des Agentenbereichs angezeigt werden kann."
 
 #. SysConfig
 msgid "Shows a link in the menu to add a workorder in the change zoom view of the agent interface."
@@ -2765,12 +2787,12 @@ msgid "Shows a link in the menu to delete a workorder in its zoom view of the ag
 msgstr "Zeigt im Menü der Arbeitsauftrag-Detailansicht im Agenten-Interface einen Link zum Löschen eines Arbeitsauftrags."
 
 #. SysConfig
-msgid "Shows a link in the menu to edit a change in the zoom view of the agent interface."
-msgstr "Zeigt in der Change-Detailansicht des Agenten-Interface einen Menü-Link zum Bearbeiten eines Change."
+msgid "Shows a link in the menu to edit a change in the its zoom view of the agent interface."
+msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Bearbeiten."
 
 #. SysConfig
-msgid "Shows a link in the menu to edit a workorder in the zoom view of the agent interface."
-msgstr "Zeigt im Menü der Arbeitsauftrag-Detailansicht im Agenten-Interface einen Link zum Bearbeiten eines Arbeitsauftrags."
+msgid "Shows a link in the menu to edit a workorder in the its zoom view of the agent interface."
+msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in der ITSM-Detailansicht im Agentenbereich bearbeitet werden kann."
 
 #. SysConfig
 msgid "Shows a link in the menu to go back in the change zoom view of the agent interface."
@@ -2781,12 +2803,12 @@ msgid "Shows a link in the menu to go back in the workorder zoom view of the age
 msgstr "Zeigt im Menü der Arbeitsauftrag-Detailansicht im Agenten-Interface einen Link zum Zurückgehen."
 
 #. SysConfig
-msgid "Shows a link in the menu to print a change in the zoom view of the agent interface."
+msgid "Shows a link in the menu to print a change in the its zoom view of the agent interface."
 msgstr "Zeigt in der \"Change Zoom\" Ansicht der Agenten-Oberfläche einen Menu Link der es erlaubt den Change auszudrucken."
 
 #. SysConfig
-msgid "Shows a link in the menu to print a workorder in the zoom view of the agent interface."
-msgstr "Zeigt im Menü der Change-Detailansicht im Agenten-Interface einen Link zum Ausdrucken eines Arbeitsauftrags."
+msgid "Shows a link in the menu to print a workorder in the its zoom view of the agent interface."
+msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in der ITSM-Detailansicht im Agentenbereich gedruckt werden kann."
 
 #. SysConfig
 msgid "Shows a link in the menu to reset a change and its workorders in its zoom view of the agent interface."
@@ -2903,488 +2925,4 @@ msgstr "einmalig"
 #. SysConfig
 msgid "regularly"
 msgstr "regelmäßig"
-
-#. Template: AgentITSMChangeHistory
-msgid "History Content"
-msgstr "Änderungsverlauf"
-
-#. Template: AgentITSMChangeHistory
-msgid "Createtime"
-msgstr "Erstellt am"
-
-#. Template: AgentITSMChangeOverviewNavBar
-msgid "Context Settings"
-msgstr "Kontext-Einstellungen"
-
-#. Template: AgentITSMChangeZoom
-msgid "Last changed by"
-msgstr "Zuletzt geändert von"
-
-#. Template: AgentITSMChangeZoom
-msgid "To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS)."
-msgstr "Um die Links im folgenden Beitrag zu öffnen, kann es notwendig sein Strg oder Shift zu drücken, während auf den Link geklickt wird (abhängig vom verwendeten Browser und Betriebssystem)."
-
-#. Template: AgentITSMChangeZoom
-msgid "Download Attachment"
-msgstr "Anhang herunterladen"
-
-#. Perl Module: Kernel/Modules/AgentITSMChangeConditionEdit.pm
-msgid "No %s is given!"
-msgstr "Kein(e) %s übermittelt!"
-
-#. Perl Module: Kernel/Output/HTML/Layout/ITSMChange.pm
-msgid "No config option found for the view \"%s\"!"
-msgstr "Keine Konfigurationsoption für die Ansicht \"%s\" gefunden!"
-
-#. JS File: ITSM.Agent.ChangeManagement.ConfirmDialog
-msgid "Ok"
-msgstr "Ok"
-
-#. SysConfig
-msgid "Change Schedule."
-msgstr "Change-Planung."
-
-#. SysConfig
-msgid "Change search backend router of the agent interface."
-msgstr "Such-Backend-Router für die Change-Suche in der Agenten-Ansicht."
-
-#. SysConfig
-msgid "Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = \"complex\"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js."
-msgstr "Definieren Sie Actions, in denen im Verknüpfte-Objekte-Widget ein Einstellungen-Knopf verfügbar sein soll (LinkObject::ViewMode = \"complex\"). Bitte beachten Sie, dass für diese Actions die folgenden JS- und CSS-Dateien registriert sein müssen: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js und Core.Agent.LinkObject.js."
-
-#. SysConfig
-msgid "Defines if the requested date should be print by customer."
-msgstr "Definiert ob das Anfragedatum für den Kunden gedruckt werden soll."
-
-#. SysConfig
-msgid "Defines if the requested date should be searched by customer."
-msgstr "Soll der Wunschtermin des Kunden gesucht werden können."
-
-#. SysConfig
-msgid "Defines if the requested date should be set by customer."
-msgstr "Definiert ob das Anfragedatum vom Kunden ausgefüllt werden soll."
-
-#. SysConfig
-msgid "Defines that only changes containing Workorders linked with services, which the customer user has permission to use will be shown. Any other changes will not be displayed."
-msgstr "Definiert, dass nur Änderungen angezeigt werden, die Arbeitsaufträge enthalten, die mit Diensten verlinkt sind, für die der Kunden-Benutzer eine Berechtigung hat. Andere Änderungen werden nicht angezeigt."
-
-#. SysConfig
-msgid "Defines the change states that will be used as filters in the customer change schedule overview."
-msgstr "Definiert die Change-States die als Filter in der Kunden-Ansicht \"Change Schedule\" verwendet werden."
-
-#. SysConfig
-msgid "Defines the default sort criteria of the changes in the customer change schedule overview."
-msgstr "Standard Sortierung der Changes in der Kunden-Ansicht \"Change Schedule\"."
-
-#. SysConfig
-msgid "Defines the default sort order in the customer change schedule overview."
-msgstr "Standard Reihenfolge der Changes in der Kunden-Ansicht \"Change Schedule\"."
-
-#. SysConfig
-msgid "Defines the shown columns in the customer change schedule overview. This option has no effect on the position of the column."
-msgstr "Definiert die angezeigten Tabellenspalten in der Kunden-Ansicht \"Change Schedule\". Diese Option hat keinen Effekt auf die Position der Spalten."
-
-#. SysConfig
-msgid "Schedule"
-msgstr "Zeitplan"
-
-#. SysConfig
-msgid "Shows a link in the menu that allows taking a workorder in the its zoom view of the agent interface."
-msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in die ITSM-Detailansicht in der Agentenoberfläche übernommen werden kann."
-
-#. SysConfig
-msgid "Shows a link in the menu to access the conditions of a change in the its zoom view of the agent interface."
-msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Zugriff auf die Bedingungen."
-
-#. SysConfig
-msgid "Shows a link in the menu to access the history of a change in the its zoom view of the agent interface."
-msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Zugriff auf die Historie."
-
-#. SysConfig
-msgid "Shows a link in the menu to access the history of a workorder in the its zoom view of the agent interface."
-msgstr "Zeigt einen Link im Menü an, über den die Historie eines Arbeitsauftrags in der ITSM-Detailansicht des Agentenbereichs angezeigt werden kann."
-
-#. SysConfig
-msgid "Shows a link in the menu to edit a change in the its zoom view of the agent interface."
-msgstr "Zeigt in der Change Zoom Ansicht des Agenten-Interfaces einen Menu Link zum Bearbeiten."
-
-#. SysConfig
-msgid "Shows a link in the menu to edit a workorder in the its zoom view of the agent interface."
-msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in der ITSM-Detailansicht im Agentenbereich bearbeitet werden kann."
-
-#. SysConfig
-msgid "Shows a link in the menu to print a change in the its zoom view of the agent interface."
-msgstr "Zeigt in der \"Change Zoom\" Ansicht der Agenten-Oberfläche einen Menu Link der es erlaubt den Change auszudrucken."
-
-#. SysConfig
-msgid "Shows a link in the menu to print a workorder in the its zoom view of the agent interface."
-msgstr "Zeigt einen Link im Menü an, über den ein Arbeitsauftrag in der ITSM-Detailansicht im Agentenbereich gedruckt werden kann."
-
-#. SysConfig
-msgid "A precentage value of the minimal translation progress per language, to be usable for documentations."
-msgstr ""
-
-#. SysConfig
-msgid "Access repos via http or https."
-msgstr ""
-
-#. SysConfig
-msgid "Autoloading of Znuny4OTRSRepo extensions."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the config conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the file conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the function redefine check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the manual set module."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for BS ad removal."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for package manager output filter."
-msgstr ""
-
-#. SysConfig
-msgid "Branch View commit limit"
-msgstr "Commit-Limit der Zweigansicht"
-
-#. SysConfig
-msgid "CodePolicy"
-msgstr ""
-
-#. SysConfig
-msgid "Commit limit per page for Branch view screen"
-msgstr "Commit-Limit pro Seite für die Zweigansicht."
-
-#. SysConfig
-msgid "Create analysis file"
-msgstr "Erstelle Analysedatei"
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket and sends to Znuny."
-msgstr "Erstellt einen Analysedatei von diesem Ticket und sendet ihn an Znuny."
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket."
-msgstr "Erstellt einen Analysedatei von diesem Ticket."
-
-#. SysConfig
-msgid "Define private addon repos."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the filter that processes the HTML templates."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the test module for checking code policy."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of GIT clone/push URL Prefix."
-msgstr "Definition des GIT clone/push URL Präfix"
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Definition eines dynamischen Feldes: Group => Gruppe mit Zugriff zu den dynamischen Feldern; AlwaysVisible => Feld kann entfernt werden (0|1); InformationAreaName => Name des Widgets; InformationAreaSize => Größe und Position des Widgets (Large|Small); Name => Der Name des zu benutzenden dynamischen Feldes; Priority => Sortierung des dynamischen Feldes; State => Status des Feldes (0 = deaktiviert, 1 = aktiviert, 2 = zwingend erforderlich), FilterRelease => Regulärer Ausdruck welcher den Repository Namen beschreibt, der angezeigt werden soll; FilterPackage => Regulärer Ausdruck welcher den Paketnamen beschreibt das angezeigt werden soll; FilterBranch => Regulärer Ausdruck welcher den Namen des Zweigs (Branch) beschreibt, der angezeigt werden soll; FilterRelease => Regulärer Ausdruck den Versions-String eines Releases beschreibt, das angezeigt werden soll."
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Definition eines dynamischen Felds: Group => Gruppe mit Zugriff auf das dynamische Feld; AlwaysVisible => Feld kann entfernt werden (0|1); InformationAreaName => Name des Widgets (Informationsbereich); InformationAreaSize => Größe und Position des Widgets (Large|Small); Name => Name des zu verwendeten dynamischen Feldes; Priority => Anordnung der dynamischen Felder; State => Status der dynamischen Felder (0 = deaktiviert, 1 = aktiviert, 2 = Pflichtfeld), FilterRepository => Regex der den Repository-Namen matchen muss um angezeigt zu werden, FilterPackage => Regex der den Packen-Namen matchen muss um angezeigt zu werden, FilterBranch => Regex der den Branch-Namen matchen muss um angezeigt zu werden, FilterRelease => Regex der den Release Version-String matchen muss um angezeigt zu werden."
-
-#. SysConfig
-msgid "Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date)."
-msgstr "Definition externer MD5 Summen (key => MD5, Value => Hersteller, Paketname, Version, Datum)."
-
-#. SysConfig
-msgid "Definition of mappings between public repository requests and internal OPMS repositories."
-msgstr "Definition von Mappings zwischen öffentlichen Repository Anfragen und internen OPMS Repositories."
-
-#. SysConfig
-msgid "Definition of package states."
-msgstr "Definition der Paket Status."
-
-#. SysConfig
-msgid "Definition of renamed OPMS packages."
-msgstr "Definition umbenannter OPMS Pakete."
-
-#. SysConfig
-msgid "Directory, which is used by Git to cache repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store temporary data."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store working copies."
-msgstr ""
-
-#. SysConfig
-msgid "Disable online repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Do not log git ssh connection authorization results for these users. Useful for automated stuff."
-msgstr "Für diese Benutzer werden keine Authorisierungen von Verbindungen geloggt. Nützlich für automatisierte Anfragen."
-
-#. SysConfig
-msgid "Dynamic Fields Screens"
-msgstr "Dynamische Felder Oberflächen"
-
-#. SysConfig
-msgid "DynamicFieldScreen"
-msgstr ""
-
-#. SysConfig
-msgid "Export all available public keys to authorized_keys file."
-msgstr "Exportiert alle verfügbaren öffentlichen Schlüssel in die Datei \"authorized_keys\"."
-
-#. SysConfig
-msgid "Export all relevant releases to ftp server."
-msgstr "Alle relevanten Releases auf den FTP-Server exportieren."
-
-#. SysConfig
-msgid "Frontend module registration for the OPMS object in the agent interface."
-msgstr "Frontendmodul-Registration für das OPMS-Objekt im Agent-Interface."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepository object in the public interface."
-msgstr "Frontendmodul-Registration des PublicOPMSRepository-Objekts im Public-Interface."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface."
-msgstr "Frontendmodul-Registration für das PublicOPMSRepositoryLookup Objekt im Public-Interface."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSTestBuild object in the public interface."
-msgstr "Frontendmodul-Registration des PublicOPMSTestBuild-Objekts im Public-Interface."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicPackageVerification object in the public interface."
-msgstr "Frontendmodul-Registration für das PublicPackageVerification Objekt im Public-Interface."
-
-#. SysConfig
-msgid "Frontend module registration for the admin interface."
-msgstr ""
-
-#. SysConfig
-msgid "GIT Author registration."
-msgstr "Registrierung der GIT Verfasser"
-
-#. SysConfig
-msgid "Generate HTML comment hooks for the specified blocks so that filters can use them."
-msgstr ""
-
-#. SysConfig
-msgid "Generate documentations once per night."
-msgstr ""
-
-#. SysConfig
-msgid "Git"
-msgstr "Git"
-
-#. SysConfig
-msgid "Git Management"
-msgstr "Git-Verwaltung"
-
-#. SysConfig
-msgid "Git Repository"
-msgstr ""
-
-#. SysConfig
-msgid "Group, whose members have delete admin permissions in OPMS."
-msgstr "Gruppe, dessen Mitglieder Delete-Admin-Rechte in OPMS haben."
-
-#. SysConfig
-msgid "Group, whose members have repository admin permissions in OPMS."
-msgstr "Gruppe, dessen Mitglieder Repository-Admin-Rechte in OPMS haben."
-
-#. SysConfig
-msgid "Group, whose members will see CI test result information in OPMS screens."
-msgstr ""
-
-#. SysConfig
-msgid "Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface."
-msgstr "Gruppen denen ein authentifizierter Benutzer (durch Benutzernamen und Passwort) angehören muss, um Testpakete über das Public-Interface zu erzeugen."
-
-#. SysConfig
-msgid "Groups which will be set during git project creation processes while adding OPMS repositories."
-msgstr "Gruppen welche automatisch durch das Anlegen von GIT-Projekten gesetzt werden, während OPMS Repositories angelegt werden."
-
-#. SysConfig
-msgid "Manage dynamic field in screens."
-msgstr "Verwaltung von dynamischen Feldern in Oberflächen."
-
-#. SysConfig
-msgid "Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key."
-msgstr "Verwalten Sie hier Ihre öffentlichen SSH-Schlüssel für den Git-Zugang. Achten Sie darauf, diese Einstellung zu speichern, wenn Sie einen neuen Schlüssel hinzufügen."
-
-#. SysConfig
-msgid "Module to generate statistics about the added code lines."
-msgstr "Modul zur Erstellung von Statistiken über die hinzugefügten Code-Zeilen."
-
-#. SysConfig
-msgid "Module to generate statistics about the growth of code."
-msgstr "Modul zur Generierung von Statistiken über das Wachstum von Code."
-
-#. SysConfig
-msgid "Module to generate statistics about the number of git commits."
-msgstr "Modul zur Erstellung von Statistiken über die Anzahl der Git-Commits."
-
-#. SysConfig
-msgid "Module to generate statistics about the removed code lines."
-msgstr "Modul zur Erstellung von Statistiken über die gelöschten Code-Zeilen."
-
-#. SysConfig
-msgid "OPMS"
-msgstr "OPMS"
-
-#. SysConfig
-msgid "Only users who have rw permissions in one of these groups may access git."
-msgstr "Nur Benutzer, die über rw-Berechtigungen in einer dieser Gruppen verfügen, können auf Git zugreifen."
-
-#. SysConfig
-msgid "Option to set a package compatibility manually."
-msgstr ""
-
-#. SysConfig
-msgid "Parameters for the pages in the BranchView screen."
-msgstr "Parameter für die Seiten in der BranchView-Ansicht."
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITProjectName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Vor-Definition des dynamischen Feldes 'GITProjectName': Group => Gruppe mit Zugriff auf das dynamische Feld; AlwaysVisible => Feld kann entfernt werden (0|1); InformationAreaName => Name des Widgets (Informationsbereich); InformationAreaSize => Größe und Position des Widgets (Large|Small); Name => Name des zu verwendeten dynamischen Feldes; Priority => Anordnung der dynamischen Felder; State => Status der dynamischen Felder (0 = deaktiviert, 1 = aktiviert, 2 = Pflichtfeld), FilterRepository => Regex der den Repository-Namen matchen muss um angezeigt zu werden, FilterPackage => Regex der den Packen-Namen matchen muss um angezeigt zu werden, FilterBranch => Regex der den Branch-Namen matchen muss um angezeigt zu werden, FilterRelease => Regex der den Release Version-String matchen muss um angezeigt zu werden."
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITRepositoryName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Vor-Definition des dynamischen Feldes 'GITRepositoryName': Group => Gruppe mit Zugriff auf das dynamische Feld; AlwaysVisible => Feld kann entfernt werden (0|1); InformationAreaName => Name des Widgets (Informationsbereich); InformationAreaSize => Größe und Position des Widgets (Large|Small); Name => Name des zu verwendeten dynamischen Feldes; Priority => Anordnung der dynamischen Felder; State => Status der dynamischen Felder (0 = deaktiviert, 1 = aktiviert, 2 = Pflichtfeld), FilterRepository => Regex der den Repository-Namen matchen muss um angezeigt zu werden, FilterPackage => Regex der den Packen-Namen matchen muss um angezeigt zu werden, FilterBranch => Regex der den Branch-Namen matchen muss um angezeigt zu werden, FilterRelease => Regex der den Release Version-String matchen muss um angezeigt zu werden."
-
-#. SysConfig
-msgid "Pre-Definition of the 'PackageDeprecated' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Vor-Definition des dynamischen Feldes 'PackageDeprecated': Group => Gruppe mit Zugriff auf das dynamische Feld; AlwaysVisible => Feld kann entfernt werden (0|1); InformationAreaName => Name des Widgets (Informationsbereich); InformationAreaSize => Größe und Position des Widgets (Large|Small); Name => Name des zu verwendeten dynamischen Feldes; Priority => Anordnung der dynamischen Felder; State => Status der dynamischen Felder (0 = deaktiviert, 1 = aktiviert, 2 = Pflichtfeld), FilterRepository => Regex der den Repository-Namen matchen muss um angezeigt zu werden, FilterPackage => Regex der den Packen-Namen matchen muss um angezeigt zu werden, FilterBranch => Regex der den Branch-Namen matchen muss um angezeigt zu werden, FilterRelease => Regex der den Release Version-String matchen muss um angezeigt zu werden."
-
-#. SysConfig
-msgid "Recipients that will be informed by email in case of errors."
-msgstr ""
-
-#. SysConfig
-msgid "SSH Keys for Git Access"
-msgstr "SSH-Schlüssel für den Git-Zugang"
-
-#. SysConfig
-msgid "Send analysis file"
-msgstr "Sende Analysedatei"
-
-#. SysConfig
-msgid "Sets the git clone address to be used in repository listings."
-msgstr "Legt die Git-Clone-Adresse fest, die in Repository-Listen verwendet werden soll."
-
-#. SysConfig
-msgid "Sets the home directory for git repositories."
-msgstr "Legt das Home-Verzeichnis für Git-Repositorys fest."
-
-#. SysConfig
-msgid "Sets the path for the BugzillaAddComment post receive script location."
-msgstr "Legt den Pfad zums BugzillaAddComment post receive Skript fest."
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr "Legt den Pfad zum OTRSCodePolicy pre-receive Skript fest. Es wird empfohlen, einen separaten Klon des OTRSCodePolicy-Moduls zu verwenden, der über Cron aktualisiert wird."
-
-#. SysConfig
-msgid "Show latest commits in git repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Shows a link in the menu to go create a unit test from the current ticket."
-msgstr ""
-
-#. SysConfig
-msgid "Synchronize OPMS tables with a remote database."
-msgstr "Synchronisiert OPMS Tabellen mit einer entfernten Datenbank."
-
-#. SysConfig
-msgid "The minimum version of the sphinx library."
-msgstr ""
-
-#. SysConfig
-msgid "The name of the sphinx theme to be used."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS CSS file (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS logo (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the static folder, containing images and css files."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the theme folder, containing the sphinx themes."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines all possible screens to enable or disable default columns."
-msgstr "Diese Konfiguration definiert alle möglichen Oberflächen in denen dynamische Felder als DefaultColumns aktiviert/deaktiviert werden können."
-
-#. SysConfig
-msgid "This configuration defines all possible screens to enable or disable dynamic fields."
-msgstr "Diese Konfiguration definiert alle möglichen Oberflächen in denen dynamische Felder als DynamicFields aktiviert/deaktiviert werden können."
-
-#. SysConfig
-msgid "This configuration defines if only valids or all (invalids) dynamic fields should be shown."
-msgstr "Diese Konfiguration definiert ob nur gültige oder alle (ungültige) dynamischen Felder angezeigt werden sollen."
-
-#. SysConfig
-msgid "This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It's still recommended to use only verified packages."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig 'Znuny4OTRSRepoType'."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers a Output post-filter to extend package verification."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an output filter to hide online repository selection in package manager."
-msgstr ""
-
-#. SysConfig
-msgid "Tidy unprocessed release that not passed test pomules checks for a long time."
-msgstr ""
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to execute force pushes 'git push --force'."
-msgstr "Benutzer, die rw-Berechtigungen in einer dieser Gruppen haben, dürfen Force-Pushes 'git push --force' ausführen."
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management."
-msgstr "Benutzer die über rw-Berechtigungen in einer dieser Gruppen verfügen, können Projekte verwalten. Zusätzlich haben die Mitglieder Administrationsberechtigungen für die Git-Verwaltung."
 
