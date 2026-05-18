@@ -209,7 +209,7 @@ sub Data {
     $Self->{Translation}->{'Edit Content'} = 'Tartalom szerkesztése';
     $Self->{Translation}->{'Create by'} = 'Létrehozta';
     $Self->{Translation}->{'Change by'} = 'Módosította';
-    $Self->{Translation}->{'Change Time'} = 'Változtatás ideje';
+    $Self->{Translation}->{'Change Time'} = 'Módosítás ideje';
 
     # Template: AgentITSMWorkOrderAdd
     $Self->{Translation}->{'Add Workorder to %s%s'} = 'Munkamegrendelés hozzáadása ehhez: %s%s';
