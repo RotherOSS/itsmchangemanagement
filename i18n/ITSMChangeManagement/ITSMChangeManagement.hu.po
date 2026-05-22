@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2019-04-09 12:23+0000\n"
-"PO-Revision-Date: 2026-05-21 10:00+0000\n"
+"PO-Revision-Date: 2026-05-22 14:00+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/opm-packages/"
 "itsm-changemanagement/hu/>\n"
@@ -27,7 +27,7 @@ msgstr "A Kategória ↔ Hatás összetétel prioritás eredményének kezelése
 
 #. Template: AdminITSMChangeCIPAllocate
 msgid "Priority allocation"
-msgstr "Prioritás lefoglalás"
+msgstr "Prioritáslefoglalás"
 
 #. Template: AdminITSMChangeNotification
 msgid "ITSM ChangeManagement Notification Management"
