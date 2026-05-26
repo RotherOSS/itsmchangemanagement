@@ -27,7 +27,7 @@ sub Data {
     $Self->{Translation}->{'Category ↔ Impact ↔ Priority'} = 'Kategória ↔ Hatás ↔ Prioritás';
     $Self->{Translation}->{'Manage the priority result of combinating Category ↔ Impact.'} =
         'A Kategória ↔ Hatás összetétel prioritás eredményének kezelése.';
-    $Self->{Translation}->{'Priority allocation'} = 'Prioritás lefoglalás';
+    $Self->{Translation}->{'Priority allocation'} = 'Prioritáslefoglalás';
 
     # Template: AdminITSMChangeNotification
     $Self->{Translation}->{'ITSM ChangeManagement Notification Management'} = 'ITSM változásmenedzsment értesítés kezelés';
@@ -735,7 +735,7 @@ sub Data {
     $Self->{Translation}->{'Defines the field type of CompareValue fields for workorder attributes used in the change condition edit screen of the agent interface. Valid values are Selection, Text and Date. If a type is not defined, the field will not be shown.'} =
         'Meghatározza az „Összehasonlítás érték” mezők mezőtípusát az ügyintézői felület változás feltételének szerkesztése képernyőjén használt munkamegrendelés attribútumainál. Az érvényes értékek: Selection, Text és Date. Ha a típus nincs meghatározva, akkor a mező nem lesz látható.';
     $Self->{Translation}->{'Defines the height for the rich text editor component for this screen. Enter number (pixels) or percent value (relative).'} =
-        '';
+        'Meghatározza a Rich Text szerkesztő-összetevő magasságát ennél a képernyőnél. Szám (képpont) vagy százalék (relatív) értéket adjon meg.';
     $Self->{Translation}->{'Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.'} =
         'Meghatározza azokat az objektumattribútumokat, amelyek kiválaszthatók a változásobjektumoknál az ügyintézői felület változás feltételének szerkesztése képernyőjén.';
     $Self->{Translation}->{'Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.'} =
