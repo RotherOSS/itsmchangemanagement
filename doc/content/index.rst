@@ -88,6 +88,10 @@ ITSMChange::EventModule###03-Condition
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ITSM event module that matches conditions and executes actions.
 
+ITSMChange::EventModule###1000-GenericInterface
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Performs the configured action for each event (as an Invoker) for each configured Webservice.
+
 ITSMChange::EventModule###80-ToolBarChangeManagerCacheDelete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ITSM event module that deletes the cache for a toolbar.
@@ -111,10 +115,6 @@ ITSM event module that deletes the history of changes.
 ITSMChangeManagementNotification::EventModule###01-HistoryAdd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ITSM event module that updates the history of changes.
-
-ITSMChange::EventModule###1000-GenericInterface
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Performs the configured action for each event (as an Invoker) for each configured Webservice.
 
 Core::Event::ITSMChangeCronjob
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,13 +165,13 @@ ITSMWorkOrder::EventModule###05-Condition
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ITSM event module that matches conditions and executes actions.
 
-ITSMWorkOrder::EventModule###80-ToolBarMyWorkOrdersCacheDelete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-ITSM event module that deletes the cache for a toolbar.
-
 ITSMWorkOrder::EventModule###1000-GenericInterface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Performs the configured action for each event (as an Invoker) for each configured Webservice.
+
+ITSMWorkOrder::EventModule###80-ToolBarMyWorkOrdersCacheDelete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ITSM event module that deletes the cache for a toolbar.
 
 Core::ITSMChange
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,29 +180,33 @@ ITSMChange::AddChangeLinkTicketTypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Types of tickets, where in the ticket zoom view a link to add a change will be displayed.
 
-ITSMChange::RestrictTicketTypes::Groups
+ITSMChange::Category::Default
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Only users of these groups have the permission to use the ticket types as defined in "ITSMChange::AddChangeLinkTicketTypes" if the feature "Ticket::Acl::Module###200-Ticket::Acl::Module" is enabled.
+Defines the default value for the category of a change.
 
 ITSMChange::Hook
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The identifier for a change, e.g. Change#, MyChange#. The default is Change#.
 
-ITSMChange::StateLock::AllowEndStates
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines if reachable (as defined by the state machine) change end states should be allowed if a change is in a locked state.
-
-ITSMChange::State::Signal
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the signals for each ITSM change state.
-
-ITSMChange::Category::Default
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the default value for the category of a change.
-
 ITSMChange::Impact::Default
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the default value for the impact of a change.
+
+ITSMChange::NumberGenerator
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Selects the change number generator module. "AutoIncrement" increments the change number, the SystemID and the counter are used with SystemID.counter format (e.g. 100118, 100119). With "Date", the change numbers will be generated by the current date and a counter; this format looks like Year.Month.Day.counter, e.g. 2010062400001, 2010062400002. With "DateChecksum", the counter will be appended as checksum to the string of date plus the SystemID. The checksum will be rotated on a daily basis. This format looks like Year.Month.Day.SystemID.Counter.CheckSum, e.g. 2010062410000017, 2010062410000026.
+
+ITSMChange::NumberGenerator::AutoIncrement::MinCounterSize
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Sets the minimal change counter size (if "AutoIncrement" was selected as ITSMChange::NumberGenerator). Default is 5, this means the counter starts from 10000.
+
+ITSMChange::NumberGenerator::Date::UseFormattedCounter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Enables the minimal change counter size (if "Date" was selected as ITSMChange::NumberGenerator).
+
+ITSMChange::NumberGenerator::MinCounterSize
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Sets the minimal change counter size (if "AutoIncrement" was selected as ITSMChange::NumberGenerator). Default is 5, this means the counter starts from 10000.
 
 ITSMChange::Permission###06-AddWorkOrderCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -224,28 +228,44 @@ ITSMChange::Permission###40-CABCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Module to check the CAB members.
 
-ITSMChange::NumberGenerator
+ITSMChange::RestrictTicketTypes::Groups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Selects the change number generator module. "AutoIncrement" increments the change number, the SystemID and the counter are used with SystemID.counter format (e.g. 100118, 100119). With "Date", the change numbers will be generated by the current date and a counter; this format looks like Year.Month.Day.counter, e.g. 2010062400001, 2010062400002. With "DateChecksum", the counter will be appended as checksum to the string of date plus the SystemID. The checksum will be rotated on a daily basis. This format looks like Year.Month.Day.SystemID.Counter.CheckSum, e.g. 2010062410000017, 2010062410000026.
+Only users of these groups have the permission to use the ticket types as defined in "ITSMChange::AddChangeLinkTicketTypes" if the feature "Ticket::Acl::Module###200-Ticket::Acl::Module" is enabled.
 
-ITSMChange::NumberGenerator::MinCounterSize
+ITSMChange::State::Signal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Sets the minimal change counter size (if "AutoIncrement" was selected as ITSMChange::NumberGenerator). Default is 5, this means the counter starts from 10000.
+Defines the signals for each ITSM change state.
 
-ITSMChange::NumberGenerator::AutoIncrement::MinCounterSize
+ITSMChange::StateLock::AllowEndStates
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Sets the minimal change counter size (if "AutoIncrement" was selected as ITSMChange::NumberGenerator). Default is 5, this means the counter starts from 10000.
-
-ITSMChange::NumberGenerator::Date::UseFormattedCounter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Enables the minimal change counter size (if "Date" was selected as ITSMChange::NumberGenerator).
+Defines if reachable (as defined by the state machine) change end states should be allowed if a change is in a locked state.
 
 Core::ITSMCondition::Action::ITSMChange
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMChange::Mapping::Action::Object::Attribute
+ITSMChange::Mapping::Action::Attribute::Operator###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Action::Attribute::Operator###ActualEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Action::Attribute::Operator###ActualStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Action::Attribute::Operator###CategoryID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute CategoryID in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Action::Attribute::Operator###ChangeBuilderID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ChangeBuilderID in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Action::Attribute::Operator###ChangeManagerID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ChangeManagerID in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Action::Attribute::Operator###ChangeStateID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -255,64 +275,72 @@ ITSMChange::Mapping::Action::Attribute::Operator###ChangeTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute ChangeTitle in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###CategoryID
+ITSMChange::Mapping::Action::Attribute::Operator###DynamicField
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute CategoryID in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Action::Attribute::Operator###ImpactID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute ImpactID in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###PriorityID
+ITSMChange::Mapping::Action::Attribute::Operator###PlannedEffort
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PriorityID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Action::Attribute::Operator###ChangeManagerID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ChangeManagerID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Action::Attribute::Operator###ChangeBuilderID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ChangeBuilderID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Action::Attribute::Operator###RequestedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute RequestedTime in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Action::Attribute::Operator###PlannedStartTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Action::Attribute::Operator###PlannedEndTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###ActualStartTime
+ITSMChange::Mapping::Action::Attribute::Operator###PlannedStartTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###ActualEndTime
+ITSMChange::Mapping::Action::Attribute::Operator###PriorityID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PriorityID in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###PlannedEffort
+ITSMChange::Mapping::Action::Attribute::Operator###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute RequestedTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Action::Attribute::Operator###AccountedTime
+ITSMChange::Mapping::Action::Object::Attribute
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Action::Attribute::Operator###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.
 
 Core::ITSMCondition::Action::ITSMWorkOrder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMWorkOrder::Mapping::Action::Object::Attribute
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###ActualEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###ActualStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedEffort
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderAgentID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute WorkOrderAgentID in the change condition edit screen of the agent interface.
 
 ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderNumber
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -322,52 +350,44 @@ ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderStateID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute WorkOrderStateID in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderTypeID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute WorkOrderTypeID in the change condition edit screen of the agent interface.
-
 ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute WorkOrderTitle in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderAgentID
+ITSMWorkOrder::Mapping::Action::Attribute::Operator###WorkOrderTypeID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute WorkOrderAgentID in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute WorkOrderTypeID in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedStartTime
+ITSMWorkOrder::Mapping::Action::Object::Attribute
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedEndTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###ActualStartTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###ActualEndTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###PlannedEffort
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###AccountedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Action::Attribute::Operator###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.
 
 Core::ITSMCondition::Expression::ITSMChange
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMChange::Mapping::Expression::Object::Attribute
+ITSMChange::Mapping::Expression::Attribute::Operator###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Expression::Attribute::Operator###ActualEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Expression::Attribute::Operator###ActualStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Expression::Attribute::Operator###CategoryID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute CategoryID in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Expression::Attribute::Operator###ChangeBuilderID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ChangeBuilderID in the change condition edit screen of the agent interface.
+
+ITSMChange::Mapping::Expression::Attribute::Operator###ChangeManagerID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ChangeManagerID in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Expression::Attribute::Operator###ChangeStateID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -377,64 +397,72 @@ ITSMChange::Mapping::Expression::Attribute::Operator###ChangeTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute ChangeTitle in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###CategoryID
+ITSMChange::Mapping::Expression::Attribute::Operator###DynamicField
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute CategoryID in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Expression::Attribute::Operator###ImpactID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute ImpactID in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###PriorityID
+ITSMChange::Mapping::Expression::Attribute::Operator###PlannedEffort
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PriorityID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Expression::Attribute::Operator###ChangeManagerID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ChangeManagerID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Expression::Attribute::Operator###ChangeBuilderID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ChangeBuilderID in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Expression::Attribute::Operator###RequestedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute RequestedTime in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Expression::Attribute::Operator###PlannedStartTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
 
 ITSMChange::Mapping::Expression::Attribute::Operator###PlannedEndTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###ActualStartTime
+ITSMChange::Mapping::Expression::Attribute::Operator###PlannedStartTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###ActualEndTime
+ITSMChange::Mapping::Expression::Attribute::Operator###PriorityID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute PriorityID in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###PlannedEffort
+ITSMChange::Mapping::Expression::Attribute::Operator###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute RequestedTime in the change condition edit screen of the agent interface.
 
-ITSMChange::Mapping::Expression::Attribute::Operator###AccountedTime
+ITSMChange::Mapping::Expression::Object::Attribute
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
-
-ITSMChange::Mapping::Expression::Attribute::Operator###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+Defines the object attributes that are selectable for change objects in the change condition edit screen of the agent interface.
 
 Core::ITSMCondition::Expression::ITSMWorkOrder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMWorkOrder::Mapping::Expression::Object::Attribute
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###ActualEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###ActualStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedEffort
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedEndTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedStartTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
+
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderAgentID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the operators that are selectable for the attribute WorkOrderAgentID in the change condition edit screen of the agent interface.
 
 ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderNumber
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -444,45 +472,17 @@ ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderStateID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute WorkOrderStateID in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderTypeID
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute WorkOrderTypeID in the change condition edit screen of the agent interface.
-
 ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the operators that are selectable for the attribute WorkOrderTitle in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderAgentID
+ITSMWorkOrder::Mapping::Expression::Attribute::Operator###WorkOrderTypeID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute WorkOrderAgentID in the change condition edit screen of the agent interface.
+Defines the operators that are selectable for the attribute WorkOrderTypeID in the change condition edit screen of the agent interface.
 
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedStartTime
+ITSMWorkOrder::Mapping::Expression::Object::Attribute
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedStartTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedEndTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEndTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###ActualStartTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualStartTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###ActualEndTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute ActualEndTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###PlannedEffort
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute PlannedEffort in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###AccountedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute AccountedTime in the change condition edit screen of the agent interface.
-
-ITSMWorkOrder::Mapping::Expression::Attribute::Operator###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the operators that are selectable for the attribute DynamicField in the change condition edit screen of the agent interface.
+Defines the object attributes that are selectable for workorder objects in the change condition edit screen of the agent interface.
 
 Core::ITSMCondition::ITSMChange
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -512,33 +512,13 @@ Sets up the state machine for workorders.
 Core::ITSMWorkOrder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMWorkOrder::Hook
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-The identifier for a workorder, e.g. Workorder#, MyWorkorder#. The default is Workorder#.
-
-ITSMWorkOrder::StateLock::AllowEndStates
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines if reachable (as defined by the state machine) workorder end states should be allowed if a workorder is in a locked state.
-
-ITSMWorkOrder::State::Signal
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Define the signals for each workorder state.
-
-ITSMWorkOrder::Type::Default
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Default type for a workorder. This entry must exist in general catalog class 'ITSM::ChangeManagement::WorkOrder::Type'.
-
 ITSMWorkOrder::ActualStartTimeSet::States
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 A list of workorder states, at which the ActualStartTime of a workorder will be set if it was empty at this point.
 
-ITSMWorkOrder::TakePermission::List
+ITSMWorkOrder::Hook
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-A list of the agents who have permission to take workorders. Key is a login name. Content is 0 or 1.
-
-ITSMWorkOrder::TimePeriod
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the period (in years), in which start and end times can be selected.
+The identifier for a workorder, e.g. Workorder#, MyWorkorder#. The default is Workorder#.
 
 ITSMWorkOrder::Permission###10-ChangeManagerCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -556,6 +536,14 @@ ITSMWorkOrder::Permission###40-CABCheck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Module to check the CAB members.
 
+ITSMWorkOrder::State::Signal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Define the signals for each workorder state.
+
+ITSMWorkOrder::StateLock::AllowEndStates
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines if reachable (as defined by the state machine) workorder end states should be allowed if a workorder is in a locked state.
+
 ITSMWorkOrder::TakePermission###10-EmptyAgent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Module to check whether no workorder agent is set.
@@ -563,6 +551,18 @@ Module to check whether no workorder agent is set.
 ITSMWorkOrder::TakePermission###20-ListAgent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Module to check whether the agent is contained in the configured list.
+
+ITSMWorkOrder::TakePermission::List
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+A list of the agents who have permission to take workorders. Key is a login name. Content is 0 or 1.
+
+ITSMWorkOrder::TimePeriod
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the period (in years), in which start and end times can be selected.
+
+ITSMWorkOrder::Type::Default
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Default type for a workorder. This entry must exist in general catalog class 'ITSM::ChangeManagement::WorkOrder::Type'.
 
 Core::Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -586,21 +586,21 @@ Stats::DynamicObjectRegistration###ITSMChangeManagement
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Determines if the common stats module may generate stats about changes.
 
-Stats::DynamicObjectRegistration###ITSMChangeManagementHistory
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Determines if the common stats module may generate stats about changes regarding change state updates within a timeperiod.
-
 Stats::DynamicObjectRegistration###ITSMChangeManagementChangesIncidents
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Determines if the common stats module may generate stats about changes regarding the relation between changes and incident tickets.
 
-Stats::DynamicObjectRegistration###ITSMChangeManagementRfcRequester
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Determines if the common stats module may generate stats about the number of Rfc tickets a requester created.
-
 Stats::DynamicObjectRegistration###ITSMChangeManagementChangesPerCIClasses
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Determines if the common stats module may generate stats about changes done for config item classes.
+
+Stats::DynamicObjectRegistration###ITSMChangeManagementHistory
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Determines if the common stats module may generate stats about changes regarding change state updates within a timeperiod.
+
+Stats::DynamicObjectRegistration###ITSMChangeManagementRfcRequester
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Determines if the common stats module may generate stats about the number of Rfc tickets a requester created.
 
 Core::Ticket::ACL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -630,11 +630,11 @@ List of all workorder events to be displayed in the GUI.
 Frontend::Admin::ModuleRegistration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Frontend::Module###AdminITSMChangeNotification
+Frontend::Module###AdminITSMChangeCIPAllocate
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
-Frontend::Module###AdminITSMChangeCIPAllocate
+Frontend::Module###AdminITSMChangeNotification
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
@@ -664,11 +664,11 @@ Admin area navigation for the agent interface.
 Frontend::Admin::ModuleRegistration::Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Loader::Module::AdminITSMChangeNotification###003-ITSMChangeManagement
+Loader::Module::AdminITSMChangeCIPAllocate###003-ITSMChangeManagement
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Loader module registration for the agent interface.
 
-Loader::Module::AdminITSMChangeCIPAllocate###003-ITSMChangeManagement
+Loader::Module::AdminITSMChangeNotification###003-ITSMChangeManagement
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Loader module registration for the agent interface.
 
@@ -694,13 +694,13 @@ ITSMChange::Frontend::AdminITSMChangeNotification###RichText
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Uses richtext for viewing and editing ticket notification.
 
-ITSMChange::Frontend::AdminITSMChangeNotification###RichTextWidth
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the width for the rich text editor component for this screen. Enter number (pixels) or percent value (relative).
-
 ITSMChange::Frontend::AdminITSMChangeNotification###RichTextHeight
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the height for the rich text editor component for this screen. Enter number (pixels) or percent value (relative).
+
+ITSMChange::Frontend::AdminITSMChangeNotification###RichTextWidth
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the width for the rich text editor component for this screen. Enter number (pixels) or percent value (relative).
 
 Frontend::Agent::ITSMChange::MenuModule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -817,10 +817,6 @@ Shows a link in the menu to delete a workorder in its zoom view of the agent int
 Frontend::Agent::LinkObject
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-LinkObject::ComplexTable::SettingsVisibility###ITSMChangeManagement
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = "complex"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js.
-
 LinkObject::ComplexTable###ITSMChange
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Define which columns are shown in the linked Changes widget (LinkObject::ViewMode = "complex"). Note: Only Change attributes are allowed for DefaultColumns. Possible settings: 0 = Disabled, 1 = Available, 2 = Enabled by default.
@@ -828,6 +824,10 @@ Define which columns are shown in the linked Changes widget (LinkObject::ViewMod
 LinkObject::ComplexTable###ITSMWorkOrder
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Define which columns are shown in the linked Workorder widget (LinkObject::ViewMode = "complex"). Note: Only Workorder attributes are allowed for DefaultColumns. Possible settings: 0 = Disabled, 1 = Available, 2 = Enabled by default.
+
+LinkObject::ComplexTable::SettingsVisibility###ITSMChangeManagement
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = "complex"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js.
 
 Frontend::Agent::ModuleRegistration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -856,11 +856,11 @@ Frontend::Module###AgentITSMChangeConditionEdit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
-Frontend::Module###AgentITSMChangeEdit
+Frontend::Module###AgentITSMChangeDelete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
-Frontend::Module###AgentITSMChangeDelete
+Frontend::Module###AgentITSMChangeEdit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
@@ -896,11 +896,11 @@ Frontend::Module###AgentITSMChangePIR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
-Frontend::Module###AgentITSMChangePrint
+Frontend::Module###AgentITSMChangePSA
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
-Frontend::Module###AgentITSMChangePSA
+Frontend::Module###AgentITSMChangePrint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Frontend module registration for the agent interface.
 
@@ -1163,6 +1163,10 @@ Agent interface notification module to see the number of change advisory boards.
 Frontend::Agent::View::ITSMChangeAdd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+ITSMChange::Frontend::AgentITSMChangeAdd###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Dynamic fields shown in the change add screen of the agent interface.
+
 ITSMChange::Frontend::AgentITSMChangeAdd###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Required privileges to create changes.
@@ -1170,10 +1174,6 @@ Required privileges to create changes.
 ITSMChange::Frontend::AgentITSMChangeAdd###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the requested date should be set by customer.
-
-ITSMChange::Frontend::AgentITSMChangeAdd###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Dynamic fields shown in the change add screen of the agent interface.
 
 Frontend::Agent::View::ITSMChangeAddFromTemplate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1206,24 +1206,16 @@ Required privileges to edit the conditions of changes.
 Frontend::Agent::View::ITSMChangeDelete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMChange::Frontend::AgentITSMChangeDelete###Permission
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Required privileges to delete changes.
-
 ITSMChange::Frontend::AgentITSMChangeDelete###ChangeStates
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the change states that will be allowed to delete.
 
+ITSMChange::Frontend::AgentITSMChangeDelete###Permission
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Required privileges to delete changes.
+
 Frontend::Agent::View::ITSMChangeEdit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ITSMChange::Frontend::AgentITSMChangeEdit###Permission
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Required privileges to edit changes.
-
-ITSMChange::Frontend::AgentITSMChangeEdit###RequestedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines if the requested date should be set by customer.
 
 ITSMChange::Frontend::AgentITSMChangeEdit###ChangeState
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1233,16 +1225,24 @@ ITSMChange::Frontend::AgentITSMChangeEdit###DynamicField
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Dynamic fields shown in the change edit screen of the agent interface.
 
+ITSMChange::Frontend::AgentITSMChangeEdit###Permission
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Required privileges to edit changes.
+
+ITSMChange::Frontend::AgentITSMChangeEdit###RequestedTime
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines if the requested date should be set by customer.
+
 Frontend::Agent::View::ITSMChangeHistory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ITSMChange::Frontend::HistoryOrder
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Shows the change history (reverse ordered) in the agent interface.
 
 ITSMChange::Frontend::AgentITSMChangeHistory###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Required privileges to view the history of a change.
+
+ITSMChange::Frontend::HistoryOrder
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Shows the change history (reverse ordered) in the agent interface.
 
 Frontend::Agent::View::ITSMChangeHistoryZoom
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1430,6 +1430,10 @@ ITSMChange::Frontend::AgentITSMChangePrint###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if it will be possible to print the accounted time.
 
+ITSMChange::Frontend::AgentITSMChangePrint###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Dynamic fields (for changes and workorders) shown in the change print screen of the agent interface.
+
 ITSMChange::Frontend::AgentITSMChangePrint###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Required privileges to print a change.
@@ -1441,10 +1445,6 @@ Defines if it will be possible to print the planned effort.
 ITSMChange::Frontend::AgentITSMChangePrint###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the requested date should be print by customer.
-
-ITSMChange::Frontend::AgentITSMChangePrint###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Dynamic fields (for changes and workorders) shown in the change print screen of the agent interface.
 
 Frontend::Agent::View::ITSMChangeReset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1479,21 +1479,21 @@ Defines the default sort criteria in the change schedule overview.
 Frontend::Agent::View::ITSMChangeSearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMChange::Frontend::AgentITSMChangeSearch###RequestedTime
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines if the requested date should be searched by customer.
-
 ITSMChange::Frontend::AgentITSMChangeSearch###DynamicField
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Dynamic fields shown in the change search screen of the agent interface.
 
-ITSMChange::Frontend::AgentITSMChangeSearch###ShowColumns
+ITSMChange::Frontend::AgentITSMChangeSearch###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the shown columns in the change search. This option has no effect on the position of the column.
+Defines if the requested date should be searched by customer.
 
 ITSMChange::Frontend::AgentITSMChangeSearch###SearchCSVData
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Data used to export the search result in CSV format.
+
+ITSMChange::Frontend::AgentITSMChangeSearch###ShowColumns
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the shown columns in the change search. This option has no effect on the position of the column.
 
 Frontend::Agent::View::ITSMChangeTemplate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1526,13 +1526,13 @@ Required privileges to edit the content of a template.
 Frontend::Agent::View::ITSMChangeTemplateEditContent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ITSMChange::Frontend::AgentITSMTemplateEditContent###Permission
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Required privileges to edit the content of a template.
-
 ITSMChange::Frontend::AgentITSMTemplateEditContent###DefaultChangeTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines the default change title for a dummy change which is needed to edit a workorder template.
+
+ITSMChange::Frontend::AgentITSMTemplateEditContent###Permission
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Required privileges to edit the content of a template.
 
 Frontend::Agent::View::ITSMChangeTemplateOverview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1567,9 +1567,21 @@ Required privileges to move changes in time.
 Frontend::Agent::View::ITSMChangeZoom
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+ITSMChange::Frontend::AgentHTMLFieldHeightDefault
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Set the default height (in pixels) of inline HTML fields in the change zoom screen and workorder zoom screen of the agent interface.
+
+ITSMChange::Frontend::AgentHTMLFieldHeightMax
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Set the maximum height (in pixels) of inline HTML fields in the change zoom screen and workorder zoom screen of the agent interface.
+
 ITSMChange::Frontend::AgentITSMChangeZoom###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the accounted time should be shown.
+
+ITSMChange::Frontend::AgentITSMChangeZoom###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Dynamic fields shown in the change zoom screen of the agent interface.
 
 ITSMChange::Frontend::AgentITSMChangeZoom###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1583,6 +1595,14 @@ ITSMChange::Frontend::AgentITSMChangeZoom###RequestedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the requested date should be shown by customer.
 
+ITSMChange::Frontend::AgentITSMChangeZoom###Tooltip::WorkOrderAttributes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines the shown attributes of a workorder in the tooltip of the workorder graph in the change zoom. To show workorder dynamic fields in the tooltip, they must be specified like DynamicField_WorkOrderFieldName1, DynamicField_WorkOrderFieldName2, etc.
+
+ITSMChange::Frontend::AgentITSMChangeZoom###WorkOrderGraph
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Defines shown graph attributes.
+
 ITSMChange::Frontend::AgentITSMChangeZoom###WorkOrderState
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the workorder state should be shown.
@@ -1590,26 +1610,6 @@ Defines if the workorder state should be shown.
 ITSMChange::Frontend::AgentITSMChangeZoom###WorkOrderTitle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the workorder title should be shown.
-
-ITSMChange::Frontend::AgentITSMChangeZoom###WorkOrderGraph
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines shown graph attributes.
-
-ITSMChange::Frontend::AgentITSMChangeZoom###Tooltip::WorkOrderAttributes
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Defines the shown attributes of a workorder in the tooltip of the workorder graph in the change zoom. To show workorder dynamic fields in the tooltip, they must be specified like DynamicField_WorkOrderFieldName1, DynamicField_WorkOrderFieldName2, etc.
-
-ITSMChange::Frontend::AgentITSMChangeZoom###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Dynamic fields shown in the change zoom screen of the agent interface.
-
-ITSMChange::Frontend::AgentHTMLFieldHeightDefault
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Set the default height (in pixels) of inline HTML fields in the change zoom screen and workorder zoom screen of the agent interface.
-
-ITSMChange::Frontend::AgentHTMLFieldHeightMax
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Set the maximum height (in pixels) of inline HTML fields in the change zoom screen and workorder zoom screen of the agent interface.
 
 Frontend::Agent::View::ITSMWorkOrderAdd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1658,6 +1658,10 @@ ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###DynamicField
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Dynamic fields shown in the workorder edit screen of the agent interface.
 
+ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###MoveFollowingWorkOrders
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Shows a checkbox in the workorder edit screen of the agent interface that defines if the the following workorders should also be moved if a workorder is modified and the planned end time has changed.
+
 ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Required privileges to edit a workorder.
@@ -1665,10 +1669,6 @@ Required privileges to edit a workorder.
 ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###PlannedEffort
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the planned effort should be shown.
-
-ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###MoveFollowingWorkOrders
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Shows a checkbox in the workorder edit screen of the agent interface that defines if the the following workorders should also be moved if a workorder is modified and the planned end time has changed.
 
 Frontend::Agent::View::ITSMWorkOrderHistory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1717,6 +1717,10 @@ ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###AccountedTime
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the accounted time should be shown.
 
+ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###DynamicField
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Dynamic fields shown in the workorder zoom screen of the agent interface.
+
 ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###Permission
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Required privileges to view a workorder.
@@ -1725,20 +1729,16 @@ ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###PlannedEffort
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Defines if the planned effort should be shown.
 
-ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###DynamicField
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Dynamic fields shown in the workorder zoom screen of the agent interface.
-
 Frontend::Agent::View::Preferences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-PreferencesGroups###UserCreateWorkOrderNextMask
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Parameters for the UserCreateWorkOrderNextMask object in the preference view of the agent interface.
 
 PreferencesGroups###ChangeOverviewSmallPageShown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Parameters for the pages (in which the changes are shown) of the small change overview.
+
+PreferencesGroups###UserCreateWorkOrderNextMask
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Parameters for the UserCreateWorkOrderNextMask object in the preference view of the agent interface.
 
 PreferencesGroups###UserITSMChangeManagementTemplateEdit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1761,6 +1761,13 @@ Module to show a link to create a change from this ticket. The ticket will be au
 Ticket::Frontend::MenuModule###318-ITSMChangeAddFromTemplate
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Module to show a link to create a change from this ticket. The ticket will be automatically linked with the new change.
+
+Frontend::Base::DynamicFieldScreens
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+DynamicFieldScreens::ObjectTypes###ITSMChangeManagement
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Define a list of dynamic field object types which are allowed to be assigned to actions of this package via the dynamic field screens interface.
 
 Frontend::Base::Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1826,8 +1833,8 @@ About
 Contact
 -------
 | Rother OSS GmbH
-| Email: hello@otobo.de
-| Web: https://otobo.de
+| Email: hello@otobo.io
+| Web: https://otobo.io
 
 Version
 -------
