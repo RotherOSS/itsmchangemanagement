@@ -185,7 +185,7 @@ sub Data {
     $Self->{Translation}->{'Last changed'} = 'Utoljára módosítva';
     $Self->{Translation}->{'Last changed by'} = 'Utoljára módosította';
     $Self->{Translation}->{'To open links in the following description blocks, you might need to press Ctrl or Cmd or Shift key while clicking the link (depending on your browser and OS).'} =
-        'A következő leírásblokkokban lévő hivatkozások megnyitásához lehet, hogy meg kell nyomnia a Ctrl vagy a Cmd vagy a Shift billentyűt, miközben a hivatkozásra kattint (a böngészőjétől és az operációs rendszerétől függően).';
+        'A következő leírási blokkokban lévő hivatkozások megnyitásához lehetséges, hogy le kell nyomnia a Ctrl vagy Cmd vagy Shift billentyűt, miközben a hivatkozásra kattint (a böngészőjétől és operációs rendszerétől függően).';
     $Self->{Translation}->{'Download Attachment'} = 'Melléklet letöltése';
 
     # Template: AgentITSMTemplateEditCAB
@@ -647,7 +647,7 @@ sub Data {
     $Self->{Translation}->{'Define Actions where a settings button is available in the linked objects widget (LinkObject::ViewMode = "complex"). Please note that these Actions must have registered the following JS and CSS files: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js and Core.Agent.LinkObject.js.'} =
         'Műveletek meghatározása, ahol egy beállítások gomb érhető el a kapcsolt objektumok felületi elemen (LinkObject::ViewMode = „összetett”). Ne feledje, hogy ezeknek a műveleteknek rendelkezniük kell a következő JS és CSS fájlok regisztrálásával: Core.AllocationList.css, Core.UI.AllocationList.js, Core.UI.Table.Sort.js, Core.Agent.TableFilters.js és Core.Agent.LinkObject.js.';
     $Self->{Translation}->{'Define a list of dynamic field object types which are allowed to be assigned to actions of this package via the dynamic field screens interface.'} =
-        '';
+        'Azon dinamikus mező objektumtípusok listájának meghatározása, amelyek hozzárendelhetők a csomag műveleteihez a dinamikus mező képernyőinek felületén keresztül.';
     $Self->{Translation}->{'Define the signals for each workorder state.'} = 'A szignálok meghatározása minden munkamegrendelés-állapotnál.';
     $Self->{Translation}->{'Define which columns are shown in the linked Changes widget (LinkObject::ViewMode = "complex"). Note: Only Change attributes are allowed for DefaultColumns. Possible settings: 0 = Disabled, 1 = Available, 2 = Enabled by default.'} =
         'Annak meghatározása, hogy mely oszlopok legyenek láthatók a kapcsolt változások felületi elemen (LinkObject::ViewMode = „összetett”). Megjegyzés: csak változás attribútumok engedélyezettek az alapértelmezett oszlopoknál. Lehetséges beállítások: 0 = letiltva, 1 = elérhető, 2 = alapértelmezetten engedélyezett.';
