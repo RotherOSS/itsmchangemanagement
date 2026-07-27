@@ -486,9 +486,17 @@ ITSM.Agent.ChangeManagement.Search = (function (TargetNS) {
      *      This function initializes some behaviours for the search dialog.
      */
     TargetNS.Init = function () {
-        var OpenDialog = Core.Config.Get('ITSMChangeManagementSearch.Open');
+        var OpenDialog = Core.Config.Get('ITSMChangeManagementSearch.Open'),
+            Profile;
+
         if (OpenDialog) {
-            TargetNS.OpenSearchDialog('AgentITSMChangeSearch');
+            // Keep compatibility with pages or cached Loader files which still
+            // provide the former boolean value.
+            if (typeof OpenDialog === 'object') {
+                Profile = OpenDialog.Profile;
+            }
+
+            TargetNS.OpenSearchDialog('AgentITSMChangeSearch', Profile);
         }
     };
 

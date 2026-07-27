@@ -1063,7 +1063,9 @@ sub Run {
 
     $LayoutObject->AddJSData(
         Key   => 'ITSMChangeManagementSearch.Open',
-        Value => 1,
+        Value => {
+            Profile => $Self->{Profile},
+        },
     );
 
     # There was no 'SubAction', or there were validation errors, or an user or customer was searched
