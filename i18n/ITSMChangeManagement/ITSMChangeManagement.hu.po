@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2026-06-24 13:46+0000\n"
-"PO-Revision-Date: 2026-07-14 11:08+0000\n"
+"PO-Revision-Date: 2026-09-03 13:25+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-11-0/"
 "addons/manuals/itsm-changemanagement/hu/>\n"
@@ -495,7 +495,7 @@ msgstr "CAB"
 
 #. Template: AgentITSMChangeZoom
 msgid "Last changed"
-msgstr "Utoljára módosítva"
+msgstr "Utolsó módosítás"
 
 #. Template: AgentITSMChangeZoom
 msgid "Last changed by"
@@ -2244,7 +2244,7 @@ msgid ""
 "Defines the height for the rich text editor component for this screen. Enter "
 "number (pixels) or percent value (relative)."
 msgstr ""
-"Meghatározza a Rich Text szerkesztő-összetevő magasságát ennél a "
+"Meghatározza a Rich Text szerkesztő komponens magasságát ennél a "
 "képernyőnél. Szám (képpont) vagy százalék (relatív) értéket adjon meg."
 
 #. SysConfig
