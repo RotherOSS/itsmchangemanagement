@@ -179,7 +179,6 @@ sub Data {
     # Template: AgentITSMChangeZoom
     $Self->{Translation}->{'Change Information'} = 'Информација о промени';
     $Self->{Translation}->{'Planned Effort'} = 'Планирани напор';
-    $Self->{Translation}->{'Accounted Time'} = 'Обрачунато време';
     $Self->{Translation}->{'Change Initiator(s)'} = 'Иницијатор(и) промене';
     $Self->{Translation}->{'CAB'} = 'CAB';
     $Self->{Translation}->{'Last changed'} = 'Задњи пут промењено';

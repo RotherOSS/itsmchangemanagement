@@ -179,7 +179,6 @@ sub Data {
     # Template: AgentITSMChangeZoom
     $Self->{Translation}->{'Change Information'} = 'Változás információk';
     $Self->{Translation}->{'Planned Effort'} = 'Tervezett ráfordítás';
-    $Self->{Translation}->{'Accounted Time'} = 'Elszámolt idő';
     $Self->{Translation}->{'Change Initiator(s)'} = 'Változáskezdeményezők';
     $Self->{Translation}->{'CAB'} = 'CAB';
     $Self->{Translation}->{'Last changed'} = 'Utolsó módosítás';
