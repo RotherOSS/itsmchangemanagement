@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2020-01-18 20:42+0000\n"
 "Last-Translator: Denis Renzi <itis05@virgilio.it>\n"
 "Language-Team: Italian (http://www.transifex.com/otobo/OTOBO/language/it/)\n"
@@ -479,10 +479,6 @@ msgstr "Modifica informazioni"
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
 msgstr "Sforzo pianificato"
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
-msgstr "Tempo contabilizzato"
 
 #. Template: AgentITSMChangeZoom
 msgid "Change Initiator(s)"
@@ -3277,6 +3273,9 @@ msgstr "una volta"
 #. SysConfig
 msgid "regularly"
 msgstr "Regolarmente"
+
+#~ msgid "Accounted Time"
+#~ msgstr "Tempo contabilizzato"
 
 #~ msgid "Change History"
 #~ msgstr "Cambiare la storia"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2019-04-09 12:23+0000\n"
 "Last-Translator: Udo Bretz\n"
 "Language-Team: Czech (http://www.transifex.com/otobo/OTOBO/language/cs/)\n"
@@ -477,10 +477,6 @@ msgstr "Informace o změně"
 
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
-msgstr ""
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
 msgstr ""
 
 #. Template: AgentITSMChangeZoom

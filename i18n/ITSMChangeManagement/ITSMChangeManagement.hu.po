@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2026-09-03 18:41+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-11-0/"
@@ -480,10 +480,6 @@ msgstr "Változás információk"
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
 msgstr "Tervezett ráfordítás"
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
-msgstr "Elszámolt idő"
 
 #. Template: AgentITSMChangeZoom
 msgid "Change Initiator(s)"
@@ -3674,6 +3670,9 @@ msgstr "egyszer"
 #. SysConfig
 msgid "regularly"
 msgstr "rendszeresen"
+
+#~ msgid "Accounted Time"
+#~ msgstr "Elszámolt idő"
 
 #~ msgid "Change History"
 #~ msgstr "Változástörténet"

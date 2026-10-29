@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2024-11-29 07:34+0000\n"
 "Last-Translator: Kozo Sakurai <sakurai@io-architect.com>\n"
 "Language-Team: Japanese <http://weblate.otobo.org/projects/opm-packages/itsm-"
@@ -481,10 +481,6 @@ msgstr "変更情報"
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
 msgstr "予定された取り組み"
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
-msgstr "所要時間"
 
 #. Template: AgentITSMChangeZoom
 msgid "Change Initiator(s)"
@@ -3256,6 +3252,9 @@ msgstr ""
 #. SysConfig
 msgid "regularly"
 msgstr ""
+
+#~ msgid "Accounted Time"
+#~ msgstr "所要時間"
 
 #~ msgid "Change History"
 #~ msgstr "変更履歴"

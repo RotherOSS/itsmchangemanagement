@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2021-07-01 02:17+0000\n"
 "Last-Translator: Fredy Aragón <fredmac48@hotmail.com>\n"
 "Language-Team: Spanish <https://translate.otobo.org/projects/otobo10/"
@@ -484,10 +484,6 @@ msgstr "Información del Cambio"
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
 msgstr "Esfuerzo planeado"
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
-msgstr "Tiempo contabilizado"
 
 #. Template: AgentITSMChangeZoom
 msgid "Change Initiator(s)"
@@ -3650,6 +3646,9 @@ msgstr "una vez"
 #. SysConfig
 msgid "regularly"
 msgstr "regularmente"
+
+#~ msgid "Accounted Time"
+#~ msgstr "Tiempo contabilizado"
 
 #~ msgid "Change History"
 #~ msgstr "Cambiar el historial"

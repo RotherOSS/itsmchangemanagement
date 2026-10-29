@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
-"POT-Creation-Date: 2026-06-24 13:46+0000\n"
+"POT-Creation-Date: 2026-10-21 15:14+0000\n"
 "PO-Revision-Date: 2023-11-09 23:21+0000\n"
 "Last-Translator: Aychel Mora Alpízar <aychel@gridshield.net>\n"
 "Language-Team: Spanish <https://translate.otobo.org/projects/otobo10/"
@@ -477,10 +477,6 @@ msgstr ""
 
 #. Template: AgentITSMChangeZoom
 msgid "Planned Effort"
-msgstr ""
-
-#. Template: AgentITSMChangeZoom
-msgid "Accounted Time"
 msgstr ""
 
 #. Template: AgentITSMChangeZoom
