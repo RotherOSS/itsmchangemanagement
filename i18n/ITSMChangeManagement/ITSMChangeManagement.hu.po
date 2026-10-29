@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTOBO\n"
 "POT-Creation-Date: 2026-10-21 15:14+0000\n"
-"PO-Revision-Date: 2026-09-03 18:41+0000\n"
+"PO-Revision-Date: 2026-10-29 19:41+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-11-0/"
 "addons/manuals/itsm-changemanagement/hu/>\n"
@@ -27,7 +27,7 @@ msgstr "A Kategória ↔ Hatás összetétel prioritás eredményének kezelése
 
 #. Template: AdminITSMChangeCIPAllocate
 msgid "Priority allocation"
-msgstr "Prioritáslefoglalás"
+msgstr "Prioritás lefoglalás"
 
 #. Template: AdminITSMChangeNotification
 msgid "ITSM ChangeManagement Notification Management"
@@ -71,7 +71,7 @@ msgstr "Katalógusosztály"
 
 #. Template: AdminITSMStateMachine
 msgid "Object Name"
-msgstr "Objektumnév"
+msgstr "Objektum neve"
 
 #. Template: AdminITSMStateMachine
 msgid "Overview over state transitions for"
@@ -207,7 +207,7 @@ msgstr "Kiválasztó"
 
 #. Template: AgentITSMChangeConditionEdit
 msgid "Operator"
-msgstr "Művelet"
+msgstr "Operátor"
 
 #. Template: AgentITSMChangeConditionEdit
 msgid "Delete Expression"
@@ -491,7 +491,7 @@ msgstr "CAB"
 
 #. Template: AgentITSMChangeZoom
 msgid "Last changed"
-msgstr "Utolsó módosítás"
+msgstr "Utoljára módosítva"
 
 #. Template: AgentITSMChangeZoom
 msgid "Last changed by"
@@ -1009,7 +1009,7 @@ msgstr "Munkamegrendelés-jelentés"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeSearch.pm
 msgid "Change Priority"
-msgstr "Változásprioritás"
+msgstr "Prioritás megváltoztatása"
 
 #. Perl Module: Kernel/Modules/AgentITSMChangeSearch.pm
 msgid "Change Impact"
@@ -1313,8 +1313,7 @@ msgstr "%s (kifejezés-azonosító = %s): (új = %s, régi = %s)"
 
 #. Perl Module: Kernel/System/ITSMChange/History.pm
 msgid "Workorder (ID=%s) reached actual end time."
-msgstr ""
-"A munkamegrendelés (azonosító = %s) elérte a tényleges befejezési időt."
+msgstr "A munkamegrendelés (azonosító = %s) elérte a tényleges befejezési időt."
 
 #. Perl Module: Kernel/System/ITSMChange/History.pm
 msgid "Workorder (ID=%s) reached actual start time."
@@ -1374,8 +1373,7 @@ msgstr "(azonosító = %s) Értesítés elküldve ide: %s (esemény: %s)"
 
 #. Perl Module: Kernel/System/ITSMChange/History.pm
 msgid "Workorder (ID=%s) reached planned end time."
-msgstr ""
-"A munkamegrendelés (azonosító = %s) elérte a tervezett befejezési időt."
+msgstr "A munkamegrendelés (azonosító = %s) elérte a tervezett befejezési időt."
 
 #. Perl Module: Kernel/System/ITSMChange/History.pm
 msgid "Workorder (ID=%s) reached planned start time."
@@ -1755,8 +1753,7 @@ msgstr "Változás és munkamegrendelés sablonok"
 
 #. SysConfig
 msgid "Change and workorder templates edited by this user."
-msgstr ""
-"A felhasználó által szerkesztett változás és munkamegrendelés sablonok."
+msgstr "A felhasználó által szerkesztett változás és munkamegrendelés sablonok."
 
 #. SysConfig
 msgid "Change area."
@@ -2240,7 +2237,7 @@ msgid ""
 "Defines the height for the rich text editor component for this screen. Enter "
 "number (pixels) or percent value (relative)."
 msgstr ""
-"Meghatározza a Rich Text szerkesztő komponens magasságát ennél a "
+"Meghatározza a Rich Text szerkesztő-összetevő magasságát ennél a "
 "képernyőnél. Szám (képpont) vagy százalék (relatív) értéket adjon meg."
 
 #. SysConfig
@@ -2266,8 +2263,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute AccountedTime in "
 "the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók az „Elszámolt "
-"idő” attribútumnál az ügyintézői felület változás feltételének szerkesztése "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók az „Elszámolt idő"
+"” attribútumnál az ügyintézői felület változás feltételének szerkesztése "
 "képernyőjén."
 
 #. SysConfig
@@ -2293,8 +2290,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute CategoryID in "
 "the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Kategóriaazonosító” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Kategóriaazonosító” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2302,8 +2299,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute ChangeBuilderID "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Változásösszeállító-azonosító” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Változásösszeállító-azonosító” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2311,8 +2308,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute ChangeManagerID "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Változásmenedzser-azonosító” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Változásmenedzser-azonosító” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2320,8 +2317,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute ChangeStateID in "
 "the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Változásállapot-azonosító” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Változásállapot-azonosító” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2338,8 +2335,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute DynamicField in "
 "the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „Dinamikus "
-"mező” attribútumnál az ügyintézői felület változás feltételének szerkesztése "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „Dinamikus mező"
+"” attribútumnál az ügyintézői felület változás feltételének szerkesztése "
 "képernyőjén."
 
 #. SysConfig
@@ -2347,9 +2344,9 @@ msgid ""
 "Defines the operators that are selectable for the attribute ImpactID in the "
 "change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Hatásazonosító” attribútumnál az ügyintézői felület változás feltételének "
-"szerkesztése képernyőjén."
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „Hatásazonosító"
+"” attribútumnál az ügyintézői felület változás feltételének szerkesztése "
+"képernyőjén."
 
 #. SysConfig
 msgid ""
@@ -2383,8 +2380,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute PriorityID in "
 "the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Prioritásazonosító” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Prioritásazonosító” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2401,8 +2398,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute WorkOrderAgentID "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Munkamegrendelésügyintéző-azonosító” attribútumnál az ügyintézői felület "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Munkamegrendelésügyintéző-azonosító” attribútumnál az ügyintézői felület "
 "változás feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2410,8 +2407,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute WorkOrderNumber "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Munkamegrendelés-szám” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Munkamegrendelés-szám” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2419,8 +2416,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute WorkOrderStateID "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Munkamegrendelésállapot-azonosító” attribútumnál az ügyintézői felület "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Munkamegrendelésállapot-azonosító” attribútumnál az ügyintézői felület "
 "változás feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2428,8 +2425,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute WorkOrderTitle "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Munkamegrendelés-cím” attribútumnál az ügyintézői felület változás "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Munkamegrendelés-cím” attribútumnál az ügyintézői felület változás "
 "feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2437,8 +2434,8 @@ msgid ""
 "Defines the operators that are selectable for the attribute WorkOrderTypeID "
 "in the change condition edit screen of the agent interface."
 msgstr ""
-"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a "
-"„Munkamegrendeléstípus-azonosító” attribútumnál az ügyintézői felület "
+"Meghatározza azokat az operátorokat, amelyek kiválaszthatók a „"
+"Munkamegrendeléstípus-azonosító” attribútumnál az ügyintézői felület "
 "változás feltételének szerkesztése képernyőjén."
 
 #. SysConfig
@@ -2912,8 +2909,8 @@ msgid ""
 "Module to check if WorkOrderAdd or WorkOrderAddFromTemplate should be "
 "permitted."
 msgstr ""
-"Egy modul annak ellenőrzéséhez, hogy a „Munkamegrendelés hozzáadása” vagy a "
-"„Munkamegrendelés hozzáadása sablonból” osztályokat engedélyezni kell-e."
+"Egy modul annak ellenőrzéséhez, hogy a „Munkamegrendelés hozzáadása” vagy a „"
+"Munkamegrendelés hozzáadása sablonból” osztályokat engedélyezni kell-e."
 
 #. SysConfig
 msgid "Module to check the CAB members."
@@ -2974,10 +2971,10 @@ msgid ""
 "defined in \"ITSMChange::AddChangeLinkTicketTypes\" if the feature "
 "\"Ticket::Acl::Module###200-Ticket::Acl::Module\" is enabled."
 msgstr ""
-"Csak ezen csoportok felhasználóinak van jogosultsága az "
-"„ITSMChange::AddChangeLinkTicketTypes” beállításban meghatározott "
-"jegytípusok használatára, ha a „Ticket::Acl::Module###200-"
-"Ticket::Acl::Module” szolgáltatás engedélyezve van."
+"Csak ezen csoportok felhasználóinak van jogosultsága az „"
+"ITSMChange::AddChangeLinkTicketTypes” beállításban meghatározott jegytípusok "
+"használatára, ha a „Ticket::Acl::Module###200-Ticket::Acl::Module” "
+"szolgáltatás engedélyezve van."
 
 #. SysConfig
 msgid "Other Settings"
@@ -3020,8 +3017,8 @@ msgid ""
 "Performs the configured action for each event (as an Invoker) for each "
 "configured Webservice."
 msgstr ""
-"Végrehajtja a beállított műveletet minden egyes eseményhez (meghívóként) "
-"minden beállított webszolgáltatásnál."
+"Végrehajtja a beállított műveletet minden eseménynél (mint egy meghívó) "
+"minden egyes beállított webszolgáltatáshoz."
 
 #. SysConfig
 msgid "Planned end time"
@@ -3600,8 +3597,8 @@ msgid ""
 "needed."
 msgstr ""
 "Ez az ACL modul korlátozza az „ITSMChange::AddChangeLinkTicketTypes” "
-"rendszerbeállítási lehetőségben meghatározott jegytípusok használatát az "
-"„ITSMChange::RestrictTicketTypes::Groups” csoportban meghatározott "
+"rendszerbeállítási lehetőségben meghatározott jegytípusok használatát az „"
+"ITSMChange::RestrictTicketTypes::Groups” csoportban meghatározott "
 "felhasználókra. Mivel ez az ACL ütközhet más olyan ACL-ekkel, amelyek "
 "szintén a jegytípussal vannak összefüggésben, ezért ez a rendszerbeállítási "
 "lehetőség alapértelmezetten le van tiltva, és csak akkor kell aktiválni, ha "
