@@ -1269,11 +1269,16 @@ sub WorkOrderSearch {
         push @{ $Param{WorkOrderTypeIDs} }, $TypeID;
     }
 
+    # add workordner number filter to the WHERE clause
+    if ($Param{WorkOrderNumber}) {
+        my $OneParam = $DBObject->Quote( $Param{WorkOrderNumber}, 'Integer' );
+        push @SQLWhere, "wo.workorder_number = $OneParam";
+    }
+
     # add string params to the WHERE clause
     my %StringParams = (
 
         # in workorder table
-        WorkOrderNumber => 'wo.workorder_number',
         WorkOrderTitle  => 'wo.title',
         Instruction     => 'wo.instruction_plain',
         Report          => 'wo.report_plain',
